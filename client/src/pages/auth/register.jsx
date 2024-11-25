@@ -1,41 +1,33 @@
 import React from "react";
-// import "../css/AuthPage.css";
 import { Link } from "react-router-dom";
-// import { rightArrow, google, facebook,cancelbtn } from "../assets";
+import styles from '../../css/AuthCSS/register.module.css';
+import {arrow,crossIcon,google,facebook} from '../../assets';
 
 function Register() {
   return (
-    <div className="auth-container">
-      <h1>register</h1>
-      {/* <Link to="/" className="cancelBtn">
-      <img src={cancelbtn} alt="cancel-btn" height="30px"  /></Link>
-      <div className="auth-box">
-        <h4>Sign Up</h4>
-        <form className="auth-form">
-          <input type="text" placeholder="Full Name" />
-          <input type="email" placeholder="Email" />
-          <input type="password" placeholder="Password" />
-          <input type="password" placeholder="Confirm Password" />
-          <button className="auth-btn">
-            <Link to="/" className="auth-link">SignUp</Link>
-            <img src={rightArrow} alt="right" height="34px" width="34px" />
-          </button>
-          </form>
-          <div className="social-login">
-            <img src={google} alt="google" height="64px" width="67px" />
-            <img src={facebook} alt="facebook" height="64px" width="67px" />
-          </div>
-          <div className="toggle-auth-link">
-            <p>
-              Already Have An Account?
-              <Link to="/login" className="toggle-link">
-                Login
-              </Link>
-            </p>
-          </div>
+   <>
+      <section className={styles.register}>
+        <div className={styles.wrapper}>
+        <Link to={"/"} className={styles.homeBtn}><img src={crossIcon} alt="Cancel register icon" /></Link>
+        <form className={styles.registerForm}>
+            <h3>Register</h3>
+            <input type="text" placeholder='Full name'/>
+            <input type="email" placeholder='Email' />
+            <input type="password" placeholder='Password' />
+            <input type="password"  placeholder='Confirm Password'/>
+<Link to={"/"} className={styles.registerBtn}>Register <img src={arrow} alt="arrow" /></Link>
+<div className={styles.socialIcons}>
+            <div className={styles.google}><img src={google} alt="Google icon" /></div>
+            <div className={styles.facebook}><img src={facebook} alt="Facebook icon" /></div>
+        </div>
+        <div className={styles.account}>
+              Already Have An Account? <Link to={"/"} className={styles.span}>Login</Link>
+            </div>
+        </form>
         
-      </div> */}
-    </div>
+        </div>
+      </section>
+    </>
   );
 }
 
