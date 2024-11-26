@@ -5,7 +5,7 @@ import Header from './Header'
 function ShoppingLayout() {
   return (
     <div>
-      <h1>Shooping</h1>
+      <h1>Shopping</h1>
       <Header/>
       <main>
         <Outlet/>
