@@ -21,7 +21,9 @@ function Register() {
     event.preventDefault();
     
     dispatch(registerUser(formData)).then((data)=>{
+      console.log(data);
       if(data?.payload?.success)
+
         navigate("/auth/login")
        });
 
