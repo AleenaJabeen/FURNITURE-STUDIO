@@ -35,13 +35,13 @@
   }
   .registerForm h3{
       color: var(--primary-color);
-     align-self: flex-start;
+
   font-size: 25px;
   font-weight: 700;
   line-height: 28.73px;
   
   }
-  .registerForm input {
+  .registerForm input ,textarea{
     width: 100%;
     max-height: 80px;
     padding: 1rem;
@@ -51,7 +51,7 @@
     border: 3px solid var(--primary-color);
     
   }
-  .registerForm input::placeholder{
+  .registerForm input::placeholder,.registerForm::placeholder{
       color: var(--primary-color);
   font-size: 20px;
   font-weight: 300;
@@ -76,38 +76,17 @@
   
   }
   .registerBtn{
-   width: 65%;
+    margin-top: 1rem;
+   width: 100%;
   background-color: var(--primary-color);
-  height: 65px;
+  height: 50px;
   font-size: 25px;
   font-weight: 700;
   padding-left: .25rem;
   color: var(--tm-secondary-bg);
   border-radius: 50px;
   text-decoration: none;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  }
-  .registerBtn img{
-    padding-left: 1.25rem;
-  }
-  .register .socialIcons{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.5rem;
-  }
-  .socialIcons .google ,.facebook{
-      
-    display: flex;
-    justify-content: center;
-    align-items: center;
-      width: 67.48px;
-      height: 64.51px;
-      background-color: var(--primary-color);
-      border-radius: 50%;
-      
+border: none;
   }
   .account{
       color: var(--primary-color);

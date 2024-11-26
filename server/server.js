@@ -3,6 +3,7 @@ const express = require('express'); // Framework for building web applications a
 const mongoose = require('mongoose'); // Library for connecting to and interacting with MongoDB.
 const cookieParser = require('cookie-parser'); // Middleware to read and parse cookies from the browser.
 const cors = require('cors'); // Middleware to handle Cross-Origin Resource Sharing (CORS).
+const authRouter=require('./routes/auth/auth-routes');
 
 // Create a database connection
 mongoose
@@ -18,7 +19,7 @@ const PORT = process.env.PORT || 5000; // Define the port the server will listen
 // Set up CORS to allow requests from a specific origin (front-end URL)
 app.use(
   cors({
-    origin: 'http://localhost:5173/', // Allow requests only from this URL (your front-end).
+    origin: 'http://localhost:5173', // Allow requests only from this URL (your front-end).
     methods: ['GET', 'POST', 'DELETE', 'PUT'], // Allow these HTTP methods.
     allowedHeaders: [ // Specify which headers can be sent in requests.
       'Content-Type', 
@@ -36,6 +37,7 @@ app.use(cookieParser()); // Parse cookies from the browser into an object for ea
 
 // Middleware to parse incoming JSON data
 app.use(express.json()); // Allows the server to handle JSON data sent in HTTP requests.
-
+app.use('/api/auth',authRouter);
+//when i will go to /api/auth/register it will go to registerUser and same goes for logn
 // Start the server and listen for incoming requests
 app.listen(PORT, () => console.log(`server is running on port ${PORT}`)); // Log a message indicating the server is running and its port.

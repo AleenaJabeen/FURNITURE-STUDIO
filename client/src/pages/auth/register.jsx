@@ -1,29 +1,44 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React,{useState} from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from '../../css/AuthCSS/register.module.css';
-import {arrow,crossIcon,google,facebook} from '../../assets';
+import CommonForm from "../../components/common/Form";
+import { registerFormControls } from "../../config";
+import { registerUser } from "../../store/auth-slice";
+import { useDispatch } from 'react-redux';
 
+
+
+const initialState={
+  userName:'',
+  email:'',
+  password:''
+}
 function Register() {
+  const [formData,setFormData] = useState(initialState);
+  const navigate=useNavigate();
+  const  dispatch=useDispatch();
+  function onSubmit(event){
+    event.preventDefault();
+    
+    dispatch(registerUser(formData)).then((data)=>{
+      if(data?.payload?.success)
+        navigate("/auth/login")
+       });
+
+  }
   return (
    <>
       <section className={styles.register}>
         <div className={styles.wrapper}>
-        <Link to={"/"} className={styles.homeBtn}><img src={crossIcon} alt="Cancel register icon" /></Link>
-        <form className={styles.registerForm}>
-            <h3>Register</h3>
-            <input type="text" placeholder='User Name' name= "userName"/>
-            <input type="email" placeholder='Email' name= "email" />
-            <input type="password" placeholder='Password' name= "password"/>
-            <input type="password"  placeholder='Confirm Password'/>
-            <Link to={"/"} className={styles.registerBtn}>Register <img src={arrow} alt="arrow" /></Link>
-            <div className={styles.socialIcons}>
-            <div className={styles.google}><img src={google} alt="Google icon" /></div>
-            <div className={styles.facebook}><img src={facebook} alt="Facebook icon" /></div>
-        </div>
+        <div className={styles.registerForm}>
+            <h3>Create an Account</h3>
+        <CommonForm formControls={registerFormControls} buttonText={'Sign Up'} formData={formData} setFormData={setFormData}
+onSubmit={onSubmit}
+        />
         <div className={styles.account}>
               Already Have An Account? <Link to={"/auth/login"} className={styles.span}>Login</Link>
             </div>
-        </form>
+        </div>
         
         </div>
       </section>
