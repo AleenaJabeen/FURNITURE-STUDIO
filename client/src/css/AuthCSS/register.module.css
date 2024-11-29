@@ -1,9 +1,11 @@
-
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
 .register {
-    padding: 0;
+    padding: 1rem;
     margin: 0;
     background-color: var(--tm-secondary-bg);
    max-width: 1920px;
+   height: max-content;
+   
   }
   .register img{
      max-width: 44px;
@@ -47,6 +49,7 @@
     padding: 1rem;
     padding-left: 1.5rem;
     background-color: transparent;
+    margin-bottom: 0.5rem;
     border-radius: 50px;
     border: 3px solid var(--primary-color);
     
@@ -63,8 +66,9 @@
       font-weight: 300;
       line-height: 22.98px;
   }
-  input:focus{
+  .registerForm input:focus{
       outline: none;
+      background-color: transparent;
   }
   .frgtPass{
   font-size: 20px;
@@ -101,6 +105,10 @@ border: none;
   text-decoration: none;
   color: var(--primary-color);
   }
+  input::placeholder:focus-within,input:focus-within{
+    background-color: transparent;
+    outline: none;
+  }
   @media (min-width:900px){
       .registerForm{
           width: 40vw;
@@ -112,5 +120,56 @@ border: none;
         font-size: 20px;
       }
   }
+  /* Loading styling */
   
-  
+
+
+.loadingPage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background:var(--tm-secondary-bg);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: #191654;
+}
+
+.svg {
+  height: 150px;
+  width: 150px;
+  stroke:var(--primary-color);
+  fill-opacity: 0;
+  stroke-width: 3px;
+  stroke-dasharray: 4500;
+  animation: draw 8s ease;
+}
+
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 4500;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.nameContainer {
+  height: 30px;
+  overflow: hidden;
+}
+
+.logoName {
+  color:var(--primary-color);
+  font-size: 20px;
+  letter-spacing: 12px;
+  text-transform: uppercase;
+  margin-left: 20px;
+  font-weight: bolder;
+}
+
+ 

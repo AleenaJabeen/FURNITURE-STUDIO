@@ -1,16 +1,12 @@
-import React from "react";
-import {
-  Route,
-  createBrowserRouter,
-  createRoutesFromElements,
-  Outlet,
-} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import {
   AuthLayout,
   AdminLayout,
   ShoppingLayout,
   CheckAuth,
 } from "./components";
+import { ToastContainer } from "react-toastify";
 import {
   Login,
   Register,
@@ -25,71 +21,88 @@ import {
   Listing,
   UnauthPage,
 } from "./pages";
+import { checkAuth } from "./store/auth-slice";
+import { useSelector, useDispatch } from "react-redux";
+import LoadingPage from "./components/ui/common/LoadingPage";
 
 function App() {
+  const { user, isAuthenticated, isLoading } = useSelector(
+    (state) => state.auth
+  );
+  const [isDelayedLoading, setIsDelayedLoading] = useState(true);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(checkAuth());
+  }, [dispatch]);
+
+  useEffect(() => {
+    if (!isLoading) {
+      const delayTimer = setTimeout(() => setIsDelayedLoading(false), 3500); // Adjust time as needed
+      return () => clearTimeout(delayTimer);
+    }
+  }, [isLoading]);
+
+  if (isLoading || isDelayedLoading) {
+    return <LoadingPage />;
+  }
+
   return (
     <>
-      <Outlet />
+    <ToastContainer />
+      <Routes>
+        
+        <Route
+          path="/"
+          element={
+            <CheckAuth
+              isAuthenticated={isAuthenticated}
+              user={user}
+            ></CheckAuth>
+          }
+        />
+        <Route
+          path="/auth"
+          element={
+            <CheckAuth isAuthenticated={isAuthenticated} user={user}>
+              <AuthLayout />
+            </CheckAuth>
+          }
+        >
+          <Route path="login" element={<Login />} />
+          <Route path="register" element={<Register />} />
+        </Route>
+        <Route
+          path="/admin"
+          element={
+            <CheckAuth isAuthenticated={isAuthenticated} user={user}>
+              <AdminLayout />
+            </CheckAuth>
+          }
+        >
+          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="products" element={<Products />} />
+          <Route path="features" element={<Features />} />
+          <Route path="orders" element={<Orders />} />
+        </Route>
+        <Route
+          path="/shop"
+          element={
+            <CheckAuth isAuthenticated={isAuthenticated} user={user}>
+              <ShoppingLayout />
+            </CheckAuth>
+          }
+        >
+          <Route path="listing" element={<Listing />} />
+          <Route path="home" element={<Home />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="account" element={<Account />} />
+        </Route>
+        <Route path="/unauth-page" element={<UnauthPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
-// Checking authentication logic
-// const isAuthenticated = false;
-// const user =null;
-// Checking the role of user
-const isAuthenticated = true;
-const user = {
-  name: "aleena",
-  role: "user",
-  // role:"admin"
-};
-
-export const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route element={<App />}>
-      <Route
-        path="auth"
-        element={
-          <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-            <AuthLayout />
-          </CheckAuth>
-        }
-      >
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-      </Route>
-      <Route
-        path="admin"
-        element={
-          <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-            <AdminLayout />
-          </CheckAuth>
-        }
-      >
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="products" element={<Products />} />
-        <Route path="features" element={<Features />} />
-        <Route path="orders" element={<Orders />} />
-      </Route>
-      <Route
-        path="shop"
-        element={
-          <CheckAuth isAuthenticated={isAuthenticated} user={user}>
-            <ShoppingLayout />
-          </CheckAuth>
-        }
-      >
-        <Route path="listing" element={<Listing />} />
-        <Route path="home" element={<Home />} />
-        <Route path="checkout" element={<Checkout />} />
-        <Route path="account" element={<Account />} />
-      </Route>
-
-      
-      <Route path="unauth-page" element={<UnauthPage />} />
-      <Route path="*" element={<NotFound />} />
-    </Route>
-  )
-);
 
 export default App;

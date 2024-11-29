@@ -5,7 +5,8 @@ import CommonForm from "../../components/common/Form";
 import { registerFormControls } from "../../config";
 import { registerUser } from "../../store/auth-slice";
 import { useDispatch } from 'react-redux';
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 const initialState={
@@ -17,20 +18,42 @@ function Register() {
   const [formData,setFormData] = useState(initialState);
   const navigate=useNavigate();
   const  dispatch=useDispatch();
+
   function onSubmit(event){
     event.preventDefault();
-    
+
     dispatch(registerUser(formData)).then((data)=>{
       console.log(data);
-      if(data?.payload?.success)
-
-        navigate("/auth/login")
-       });
-
+      if (data?.payload?.success) {
+        toast.success(message, {
+          position: "bottom-right",
+          autoClose: 3000,
+          style: {
+            fontSize: "16px", 
+            fontWeight: "bold", 
+            fontFamily: "'Arial', sans-serif", 
+            padding: "15px",   
+            color: "#caa571",   
+            backgroundColor: "#000000", 
+            textAlign: "center",
+          },
+        });
+        setTimeout(() => {
+          navigate("/auth/login");
+        }, 2000);
+      } else {
+        toast.error(message, {
+          position: "bottom-right",
+          autoClose: 3000,
+  
+        });
+      }
+    });
   }
   return (
    <>
       <section className={styles.register}>
+       
         <div className={styles.wrapper}>
         <div className={styles.registerForm}>
             <h3>Create an Account</h3>
@@ -41,7 +64,7 @@ onSubmit={onSubmit}
               Already Have An Account? <Link to={"/auth/login"} className={styles.span}>Login</Link>
             </div>
         </div>
-        
+
         </div>
       </section>
     </>
