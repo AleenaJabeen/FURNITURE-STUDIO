@@ -4,6 +4,7 @@ const mongoose = require('mongoose'); // Library for connecting to and interacti
 const cookieParser = require('cookie-parser'); // Middleware to read and parse cookies from the browser.
 const cors = require('cors'); // Middleware to handle Cross-Origin Resource Sharing (CORS).
 const authRouter=require('./routes/auth/auth-routes');
+const adminProductsRouter = require("./routes/admin/products-routes");
 
 // Create a database connection
 mongoose
@@ -38,6 +39,7 @@ app.use(cookieParser()); // Parse cookies from the browser into an object for ea
 // Middleware to parse incoming JSON data
 app.use(express.json()); // Allows the server to handle JSON data sent in HTTP requests.
 app.use('/api/auth',authRouter);
+app.use("/api/admin/products", adminProductsRouter);
 //when i will go to /api/auth/register it will go to registerUser and same goes for logn
 // Start the server and listen for incoming requests
 app.listen(PORT, () => console.log(`server is running on port ${PORT}`)); // Log a message indicating the server is running and its port.

@@ -8,6 +8,7 @@ function CommonForm({
   setFormData,
   onSubmit,
   buttonText,
+  isBtnDisabled,
 }) {
   // Function to render different input elements based on the `componentType` property
   function renderInputsByComponentType(getControlItem) {
@@ -34,37 +35,34 @@ function CommonForm({
         );
         break;
 
-      // case "select": // For a dropdown or select field.
-      //   element = (
-      //     <Select
-      //       value={value}
-      //       onValueChange={(event) =>
-      //         setFormData({
-      //           ...formData,
-      //           [getControlItem.name]: value,
-      //         })
-      //       }
-      //     >
-      //       <SelectTrigger className="w-full">
-      //         {/* Trigger that displays the selected value */}
-      //         <SelectValue placeholder={getControlItem.label} />
-      //       </SelectTrigger>
-      //       <SelectContent>
-      //         {/* Map through the options array to render individual `SelectItem` components */}
-      //         {getControlItem.options && getControlItem.options.length > 0
-      //           ? getControlItem.options.map((optionItem) => (
-      //               <SelectItem
-      //                 key={optionItem.id} // Unique key for each option.
-      //                 value={optionItem.id} // Sets the value of the select option.
-      //               >
-      //                 {optionItem.label} {/* Label to display the option */}
-      //               </SelectItem>
-      //             ))
-      //           : null}
-      //       </SelectContent>
-      //     </Select>
-      //   );
-      //   break;
+      case "select": // For a dropdown or select field.
+         element = (
+          <select
+          value={formData[getControlItem.name] || ""} // Ensure value is from formData and has a default.
+          placeholder={getControlItem.placeholder} // Placeholder for user guidance.
+          id={getControlItem.id}
+          onChange={(event) =>
+            setFormData({
+              ...formData,
+              [getControlItem.name]: event.target.value, // Update the correct field in formData.
+            })
+          }
+        >
+          {/* Map through the options array to render individual `option` elements */}
+          {getControlItem.options && getControlItem.options.length > 0
+            ? getControlItem.options.map((optionItem) => (
+                <option
+                  key={optionItem.id} // Unique key for each option.
+                  value={optionItem.id} // Sets the value of the select option.
+                >
+                  {optionItem.label} {/* Label to display the option */}
+                </option>
+              ))
+            : null}
+        </select>
+        
+         );
+         break;
 
       case "textarea": // For a multiline text input.
         element = (
@@ -107,19 +105,19 @@ function CommonForm({
 
   // The main JSX returned by the `CommonForm` component.
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className="w-100">
   {/* Event handler for form submission */}
   <div className="d-flex flex-column gap-3 justify-content-center align-items-center w-100">
     {/* Flex container for form elements */}
     {formControls.map((controlItem) => (
-      <div className="mb-3" key={controlItem.name}>
+      <div className="mb-3 w-100" key={controlItem.name}>
         {/* Label for the control */}
         {renderInputsByComponentType(controlItem)}
         {/* Render the appropriate input element */}
       </div>
     ))}
   </div>
-  <button type="submit" className={styles.registerBtn}>
+  <button disabled={isBtnDisabled} type="submit" className={styles.registerBtn}>
     {buttonText || "Submit"}
   </button>
 </form>

@@ -1,0 +1,82 @@
+.addProductForm input ,textarea,select{
+    width: 100%;
+    max-height: 80px;
+    padding: 1rem;
+    padding-left: 1.5rem;
+    background-color: transparent;
+    margin-bottom: 0.5rem;
+    border-radius: 50px;
+    border: 3px solid var(--primary-color);
+    
+  }
+  .addProductForm input::placeholder,.addProductForm::placeholder{
+      color: var(--primary-color);
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 22.98px;
+  }
+  .addProductForm select{
+    padding-right: 2rem;
+  }
+  .addProductForm select option {
+    background-color: var(--primary-color);
+    color: black;
+    border-radius: 20px;
+}
+
+.addProductForm input[type="number"]::-webkit-inner-spin-button, 
+.addProductForm input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.addProductForm input[type="number"] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+/* Add custom styling for number arrows using background pseudo-elements */
+.addProductForm input[type="number"]:focus {
+    border: 3px solid var(--primary-color); /* Optional for better focus visibility */
+}
+
+.addProductForm input[type="number"]::after {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+}
+  .addProductForm input[type="text"],input[type="password"],input[type="email"],select,input[type="number"]{
+      color: var(--primary-color);
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 22.98px;
+  }
+  .addProductForm input:focus, select:focus{
+      outline: none;
+      background-color: transparent;
+  }
+
+  .fileInput{
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 3px solid var(--primary-color);
+    width: 100%;
+    border-radius: 50px;
+    max-height: 80px;
+    padding: 1rem;
+    padding-left: 1.5rem;
+  }
+
+  input[type="file"]::-webkit-file-upload-button {
+    color: black;
+    background-color: var(--primary-color);
+    border: 3px solid var(--primary-color);
+    border-radius: 50px;
+    outline: none;
+    padding: 0 0.5rem;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }

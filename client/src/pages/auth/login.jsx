@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from '../../css/AuthCSS/register.module.css';
-import CommonForm from "../../components/common/Form";
+import CommonForm from "../../components/common/form";
 import { loginFormControls } from "../../config";
 import { loginUser } from "../../store/auth-slice";
 import { useDispatch } from 'react-redux';
