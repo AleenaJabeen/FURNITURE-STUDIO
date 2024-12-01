@@ -9,6 +9,9 @@ import Account from "./shopping-view/Account";
 import Checkout from "./shopping-view/Checkout";
 import Home from "./shopping-view/Home";
 import Listing from "./shopping-view/Listing";
+import AboutUs from "./shopping-view/AboutUs";
+import ContactUs from "./shopping-view/ContactUs";
 import UnauthPage from "./unauth";
 
-export{Login,Register,Dashboard,Products,Features,Orders,NotFound,Account,Checkout,Home,Listing,UnauthPage}
+
+export{Login,Register,Dashboard,Products,Features,Orders,NotFound,Account,Checkout,Home,Listing,UnauthPage,AboutUs,ContactUs}

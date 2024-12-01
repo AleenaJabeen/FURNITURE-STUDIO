@@ -19,6 +19,7 @@ import {
   Checkout,
   Home,
   Listing,
+  ContactUs,AboutUs,
   UnauthPage,
 } from "./pages";
 import { checkAuth } from "./store/auth-slice";
@@ -94,9 +95,12 @@ function App() {
           }
         >
           <Route path="listing" element={<Listing />} />
+          <Route path="account" element={<Account />} />
           <Route path="home" element={<Home />} />
           <Route path="checkout" element={<Checkout />} />
-          <Route path="account" element={<Account />} />
+          <Route path="about" element={<AboutUs />} />
+          <Route path="contact" element={<ContactUs />} />
+          
         </Route>
         <Route path="/unauth-page" element={<UnauthPage />} />
         <Route path="*" element={<NotFound />} />

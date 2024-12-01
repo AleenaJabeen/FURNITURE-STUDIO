@@ -1,16 +1,16 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
+import ShoppingHeader from './Header'
 
 function ShoppingLayout() {
   return (
-    <div>
-      <h1>Shopping</h1>
-      <Header/>
+    <>
+ <ShoppingHeader/>
       <main>
         <Outlet/>
       </main>
-    </div>
+    </>
   )
 }
 

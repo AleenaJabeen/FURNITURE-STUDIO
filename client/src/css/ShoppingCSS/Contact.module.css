@@ -1,0 +1,144 @@
+.contactPage{
+    background-color: var(--tm-secondary-bg);
+}
+/* General styles for the info box */
+.infoBox {
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align content horizontally */
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  
+  /* Icon container styling */
+  .infoIcon {
+    background-color: var(--text-skincolor-bg);
+    padding: 10px;
+    width: 90px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    margin: 0 auto; /* Center horizontally */
+  }
+  
+  /* Increase the icon size */
+  .infoIcon svg {
+    font-size: 35px; /* Increase icon size */
+    transition: transform 0.3s ease;
+  }
+  
+  /* Icon hover effect */
+  .infoBox:hover .infoIcon svg {
+    transform: rotateY(180deg); /* Rotate icon itself on hover */
+  }
+  
+  /* Header and text styles */
+  h5 {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .error {
+    color: rgb(241, 84, 84);
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+    margin-top: 10px;
+    line-height: 5px;
+  }
+  
+  /* Highlighted text for the Visit Us section */
+  .highlightText {
+    color: var(--text-skincolor-bg);
+    font-weight: bold;
+  }
+  
+  /* Underline styles */
+  .underline {
+    width: 0;
+    height: 5px;
+    background-color: var(--text-skincolor-bg);
+    margin: 10px auto 0;
+    transition: width 0.3s ease;
+  }
+  
+  /* Underline hover effect */
+  .infoBox:hover .underline {
+    width: 100%; /* Expand underline from the center on hover */
+  }
+  .contactFormContainer {
+    margin-top: 50px;
+    color: #fff;
+    padding: 20px 20px 0 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .imageSection {
+    height: 100%;
+  }
+  
+  .imageBackground {
+    background: url("../Assets/ContactAssets/ContactFormImg.jpg") no-repeat center center;
+    background-size: cover;
+    height: 100%;
+  }
+
+  
+  .heading {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+ .formGroup input:focus,
+.formGroup textarea:focus,
+.formGroup select:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border: 1px solid var(--text-skincolor-bg) !important; /* Optional: Add your custom border for focus */
+}
+.formCheck input:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+  .formGroup input,
+  .formGroup textarea {
+    background-color: transparent;
+    color: var(--text-skincolor-bg) !important;
+    border: 1px solid var(--text-skincolor-bg);
+    border-radius: 0;
+    padding: 15px 30px;
+    font-size: 15px;
+  }
+  .formGroup input:focus,
+.formGroup textarea:focus {
+  background-color: transparent; /* Slightly lighter on focus (optional) */
+}
+  
+  .formGroup input::placeholder,
+  .formGroup textarea::placeholder {
+    color: var(--text-skincolor-bg);
+  }
+  
+  
+  .submitButton {
+    background-color: transparent;
+    color: var(--text-skincolor-bg);
+    font-weight: bold;
+    border: 1px solid var(--text-skincolor-bg);
+    border-radius: 0;
+  }
+  
+  .submitButton:hover {
+    background-color: var(--text-skincolor-bg);
+    color: #fff;
+  }
+  

@@ -1,0 +1,335 @@
+/* navbar styling */
+
+.navbar {
+    background: var(--tm-secondary-bg);
+    font-family: "Lato", "Helvetica Neue", sans-serif;
+  }
+  .navbar-brand img {
+    width: 100px;
+    height: 80px;
+    object-fit: cover;
+  }
+  .nav-link{
+    color: var(--text-color);
+  }
+
+  .nav-link.active,.nav-link:hover{
+    color: var(--text-skincolor-bg) !important;
+  }
+  .nav-link.activate{
+    color: var(--text-color);
+  }
+  .navbar-brand {
+    color: var(--text-skincolor-bg);
+    font-size: 1.15rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+  }
+  .navbar-brand:hover {
+    color: var(--text-color);
+  }
+  .navbar-toggler-icon {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-nav li a {
+    color: var(--text-color);
+    font-size: 1.05rem;
+  }
+  .navbar-nav li a:hover {
+    color: var(--text-skincolor-bg);
+    border-top: 2px solid var(--text-skincolor-bg);
+    animation: borderSlide 1s linear;
+  }
+  .loginIcon{
+    font-size: 2rem;
+  }
+  .UserValue{
+    width: 40px;
+    height: 40px;
+    background-color: var(--text-skincolor-bg);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  .side{
+    position: absolute;
+    z-index: 1111;
+    right: 50px;
+    border-radius: 30px;
+  }
+  .side li{
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2rem;
+    background-color: var(--tm-secondary-bg);
+    font-size: 1.25rem;
+    gap: 1rem;
+    z-index: 1111;
+  }
+  /* Hide the custom dropdown by default */
+.custom-dropdown {
+    display: none;
+    position: absolute;
+    background-color: var(--tm-secondary-bg);
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  /* When the nav item is hovered, display the dropdown */
+  .nav-item.categories:hover .custom-dropdown {
+    display: block;
+  }
+  
+  /* Dropdown item styling */
+  .dropdown-item {
+    background-color: transparent;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Hover effect for each dropdown item */
+  .dropdown-item:hover {
+    background-color: transparent;
+    color: var(--tm-primary-color); /* Adjust color as needed */
+  }
+  
+  @keyframes borderSlide {
+    0% {
+      border-top: none;
+    }
+    50% {
+      border-top: 2px solid var(--text-skincolor-bg);
+    }
+    100% {
+      border-top: none;
+    }
+  }
+  .navbar-toggler {
+    color: var(--text-color);
+  }
+  /* Carousel styling */
+  .carousel-img {
+    object-fit: cover; /* Ensure the image covers the entire container */
+    height: 450px; /* Adjust the height as needed */
+  }
+  
+  /* Optional: Adjust the height of the carousel container */
+  .carousel {
+    height: 400px; /* Set a fixed height for the carousel container */
+  }
+  
+  .carousel-inner {
+    height: 100%; /* Make sure the inner container takes full height */
+  }
+  /* Furniture type */
+  .furnitureType{
+    background-color: var(--tm-secondary-bg);
+  }
+  .opulent,.modern,.trendy{
+    height: 500px;
+  }
+  .box{
+    top: 48%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+    padding: 12rem 6rem 12rem 7rem;
+   visibility: hidden;
+   transition: all 0.2s ease-in-out;
+  }
+  .box h4{
+    text-align: right;
+    color: var(--text-color);
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .opulent:hover .box{
+  visibility: visible;
+  backdrop-filter: blur(2px);
+  
+  }
+  .modern:hover .box{
+    visibility: visible;
+    backdrop-filter: blur(2px);
+    
+    }
+    .trendy:hover .box{
+      visibility: visible;
+      backdrop-filter: blur(2px);
+      }
+  /* About luxury styling */
+  .aboutLuxury{
+    background-color: var(--tm-secondary-bg);
+  }
+  .inline-line {
+    white-space: nowrap;
+    color: var(--text-skincolor-bg);
+  font-size: .95rem; /* Prevents wrapping */
+  
+  }
+  
+  .inline-hr, .inline-line span {
+    color: var(--text-skincolor-bg);
+    display: inline-block; /* Display hr and text inline */
+    vertical-align: middle; /* Aligns hr and text vertically */
+  }
+  .inline-line span{
+    padding-left: 1rem;
+  }
+  
+  .inline-hr {
+    width: 50px; /* Adjust width as needed */
+    border: none;
+    filter: contrast(5rem);
+    border-top: 1px solid var(--text-skincolor-bg) ;
+    opacity: 100%;
+  }
+  
+  .aboutDetail h4{
+  color: var(--text-skincolor-bg);
+  font-size: .95rem;
+  }
+  .aboutDetail h2{
+    font-size: 2.4rem;
+    color: var(--text-color);
+  }
+  .aboutDetail p {
+    line-height: 1.5rem;
+    font-size: 1rem;
+    color: var(--background-color);
+  }
+  .aboutDetail button{
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--text-skincolor-bg);
+    border: 1px solid var(--text-skincolor-bg);
+    border-radius: 0;
+  }
+  .aboutDetail button:hover{
+    background-color: var(--text-skincolor-bg);
+    color: var(--text-color);
+  }
+  /* Categories styling */
+  .categories{
+    background-color: var(--tm-secondary-bg);
+  }
+  .category{
+    background: var(--footer-bg);
+  }
+  .cardBox:hover .category{
+    background-color: var(--primary-color);
+  }
+  /* Before After styling */
+  .beforeAfter{
+    background-color: var(--tm-secondary-bg);
+    padding: 1rem 2rem;
+  }
+  .beforeAfter h2{
+    font-size: 3rem;
+  }
+  .bgB
+  {
+    background-color: var(--text-skincolor-bg);
+  }
+  .bgA{
+  background-color: var(--tm-secondary-bg);
+  }
+  .beforeAfterCard img{
+    height: 90vh;
+    object-fit: cover;
+  }
+  
+  .beforeAfterBody:hover .beforeAfterCard {
+   /* Set final opacity on hover */
+    animation: opacityCard 0.5s linear;
+    opacity: 0.5; /* Start animation on hover */
+  }
+  
+  @keyframes opacityCard {
+    0% {
+      opacity: 1; /* Equivalent to 100% */
+    }
+    25% {
+      opacity: 0.9;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    75% {
+      opacity: 0.7;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+  
+  @media (max-width:992px){
+    .beforeAfterCard img{
+      height: 40vh;
+    }
+  }
+  .lightingBtnBody{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    z-index: 100;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+  }
+  .lightingBtnBody:hover ~ .beforeAfterCard {
+    opacity: 1; /* Set opacity to full */
+    animation: none; /* Stop animation */
+  }
+  .lightingBtn{
+  color: var(--text-color);
+  transform: rotate(270deg);
+  font-size: 1rem;
+  }
+  /* footer styling */
+  .footer{
+      background: var(--footer-bg);
+      color: var(--text-color);
+      height: max-content;
+      padding: 4rem 1rem 1rem 1rem;
+  }
+  .footer-brand img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  }
+  .footer-brand p{
+      font-size: 2rem;
+      line-height: 40px;
+  }
+  
+  .footerBox ul h4{
+      font-size: 1.25rem;
+  }
+  .footerBox ul li{
+  list-style: none;
+  text-decoration: none;
+  color: var(--footer-text-color);
+  padding-top: .75rem;
+  }
+  .footer .li{
+      text-decoration: none;
+      color: var(--footer-text-color);
+  }
+  .footer-bottom{
+      border-top: .009px solid var(--footer-text-color);
+  }
+  .footer-bottom p{
+      font-size: .85rem;
+      color: var(--footer-text-color);
+  }
+ 

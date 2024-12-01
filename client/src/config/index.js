@@ -75,3 +75,75 @@ export const registerFormControls = [
     },
   ];
   
+  export const shoppingViewMenuItems=[
+    {
+      id:'Home',
+      label:'Home',
+      path:'/shop/home'
+    },
+    {
+      id:'about us',
+       label:'ABOUT US',
+        path:'/shop/about'
+    },
+    { id:"categories",
+      label:'CATEGORIES',
+      path:'/shop/listing',
+      categories:
+       [{
+      id:'furniture',
+      label:'Luxury Furniture',
+      path:'/shop/listing'
+    },
+    {
+      id:'lighting',
+      label:'Lighting',
+      path:'/shop/listing'
+    },
+     {
+      id:'accessories',
+      label:'Accessories',
+      path:'/shop/listing'
+    }
+  ]
+  },
+  {
+    id:'contact',
+     label:'CONTACT US',
+      path:'/shop/contact'
+  }
+
+
+  ];
+export const categoryOptionsMap={
+  'furniture':'Luxury Furniture',
+  'lighting':'Lighting',
+  'accessories':'Accessories'
+}
+export  const filterOptions=
+    {
+      category:[
+        {id:"furniture", label:"Luxury Furniture"},
+        {id:"lighting", label:"Lighting"},
+        {id:"accessories", label:"Accessories"},
+      ]
+
+    };
+export const sortOptions=[
+  {
+    id:"price-lowtohigh",label:"Price:Low to High",
+  },
+  {
+    id:"price-hightolow",label:"Price:High to Low",
+  },
+  {
+    id:"title-atoz",label:"Title:A to Z",
+  },
+  {
+    id:"title-ztoa",label:"Title:Z to A",
+  }
+]
+
+  
+
+
