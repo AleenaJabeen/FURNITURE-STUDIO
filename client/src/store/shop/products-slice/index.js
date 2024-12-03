@@ -33,7 +33,7 @@ export const fetchProductDetails = createAsyncThunk(
     );
 
     return result?.data;
-    
+    cosnole.log(result);
   }
 );
 

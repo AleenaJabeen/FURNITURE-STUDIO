@@ -7,7 +7,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from 'react-router-dom';
 import {
   fetchAllFilteredProducts,
-  fetchProductDetails
 
 } from "../../store/shop/products-slice";
 
@@ -65,10 +64,6 @@ function Listing() {
 
   }
 
-  function handleGetProductDetails(getCurrentProductId){
-    console.log(getCurrentProductId);
-    dispatch(fetchProductDetails(getCurrentProductId));
-  }
   useEffect(() => {
     setSort("price-lowtohigh");
     setFilters(JSON.parse(sessionStorage.getItem("filters")) || {});
@@ -86,7 +81,7 @@ function Listing() {
         fetchAllFilteredProducts({ filterParams: filters, sortParams: sort })
       );
   }, [dispatch, sort, filters]);
-  console.log(productDetails,"productdeatils");
+
   return (
     <div className={`${styles.listingSection} container-fluid`}>
      <ProductFilter filters={filters} handleFilters={handleFilters}/>
@@ -107,7 +102,7 @@ function Listing() {
     <div className="row pb-5">
     
 {productList && productList.length > 0 && productList? (productList.map((productItem,index)=>{
-return <ProductTile products={productItem} key={index} handleGetProductDetails={handleGetProductDetails}/>})) : null }
+return <ProductTile products={productItem} key={index}/>})) : null }
 </div>
 </div>
 </div>
