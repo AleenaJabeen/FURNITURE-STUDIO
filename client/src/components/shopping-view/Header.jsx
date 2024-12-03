@@ -12,12 +12,13 @@ import { shoppingViewMenuItems } from "../../config";
 import { useDispatch } from "react-redux";
 import { logoutUser } from "../../store/auth-slice";
 
-const handleClose = () => {
-  setIsOpen(false);
-};
+
 function MenuItems() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClose = () => {
+    setIsOpen(false);
+  };
   return (
     <nav className="navbar navbar-expand-lg ms-auto">
       <ul className="navbar-nav ms-auto">
@@ -82,6 +83,9 @@ const navigate=useNavigate();
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
+  const handleClose = () => {
+    setIsOpen(false);
+  };
   const handleNavigate=()=>{
     navigate('/shop/account');
   }
@@ -136,7 +140,9 @@ function ShoppingHeader() {
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
-  
+  const handleClose = () => {
+    setIsOpen(false);
+  };
  
 
   return (
@@ -174,96 +180,7 @@ function ShoppingHeader() {
     </header>
 
     </>
-    // <nav className="navbar navbar-expand-lg">
-    //   <div className="container-fluid">
-    //     <div className="navbar-brand">
-    //       <img src={logo} alt="Logo" />
-    //       <span className="span">FURNITURE <br /> STUDIO</span>
-    //     </div>
-    //     <button
-    //       className="navbar-toggler"
-    //       type="button"
-    //       onClick={handleToggle}
-    //       aria-controls="navbarNavDropdown"
-    //       aria-expanded={isOpen ? "true" : "false"}
-    //       aria-label="Toggle navigation"
-    //     >
-    //       <span className="navbar-toggler-icon">
-    //         {isOpen ? <IoMdClose /> : <GiHamburgerMenu />}
-    //       </span>
-    //     </button>
-    //     <div
-    //       className={`collapse navbar-collapse ${isOpen ? "show" : ""}`}
-    //       id="navbarNavDropdown"
-    //     >
-    //       <ul className="navbar-nav ms-auto">
-    //         <li className="nav-item px-2">
-    //           <NavLink
-    //             to="/"
-    //             className={({ isActive }) =>
-    //               `nav-link ${isActive ? "active" : ""}`
-    //             }
-    //             aria-current="page"
-    //             onClick={handleClose}
-    //           >
-    //             HOME
-    //           </NavLink>
-    //         </li>
-    //         <li className="nav-item px-2">
-    //           <NavLink className={({ isActive }) =>
-    //             `nav-link ${isActive ? "active" : ""}`
-    //           } to="/about" onClick={handleClose}>
-    //             ABOUT US
-    //           </NavLink>
-    //         </li>
-    //         <li
-    //           className="nav-item categories px-2"
-    //           onMouseEnter={() => setDropdownVisible(true)}
-    //           onMouseLeave={() => setDropdownVisible(false)}
-    //         >
-    //           <Link className="nav-link" >
-    //             CATEGORIES
-    //             <TiArrowSortedDown />
-    //           </Link>
-    //           {dropdownVisible && (
-    //             <div className="custom-dropdown">
-    //               <NavLink className="dropdown-item" to="/category/Furniture" onClick={handleClose}>
-    //                 Furniture
-    //               </NavLink>
-    //               <NavLink className="dropdown-item" to="/category/Lighting" onClick={handleClose}>
-    //                 Lighting
-    //               </NavLink>
-    //               <NavLink className="dropdown-item" to="/category/Accessories" onClick={handleClose}>
-    //                 Accessories
-    //               </NavLink>
-    //             </div>
-    //           )}
-    //         </li>
-    //         <li className="nav-item px-2">
-    //           <NavLink className={({ isActive }) =>
-    //             `nav-link ${isActive ? "active" : ""}`
-    //           } to="/contact" onClick={handleClose}>
-    //             CONTACT US
-    //           </NavLink>
-    //         </li>
-            // <li className="nav-item px-2">
-            //   <NavLink className={({ isActive }) =>
-            //     `nav-link ${isActive ? "active" : ""}`
-            //   } to="/cart" onClick={handleClose}>
-            //     <FaCartShopping className="loginIcon" />
-            //   </NavLink>
-            // </li>
-            // <li className="nav-item px-2">
-            //   <NavLink className={({ isActive }) =>
-            //     `nav-link ${isActive ? "active" : ""}`
-            //   } to="/login" onClick={handleClose}>
-            //     <IoPersonOutline className="loginIcon" />
-            //   </NavLink>
-            // </li>
-    //       </ul>
-    //     </div>
-    //   </div>
-    // </nav>
+    
   );
 }
 

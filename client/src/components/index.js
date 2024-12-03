@@ -5,5 +5,6 @@ import CheckAuth from "./common/check-auth";
 import About from "./ui/AboutPage/About";
 import Contact from "./ui/ContactPage/Contact";
 import ProductFilter from "./shopping-view/Filter";
-import ProjectTile from "./shopping-view/ProjectTile";
-export{AuthLayout,AdminLayout,ShoppingLayout,CheckAuth,About,Contact,ProductFilter,ProjectTile};
+import ProductTile from "./shopping-view/ProductTile";
+import ProductDetails from "./shopping-view/ProductDetails";
+export{AuthLayout,AdminLayout,ShoppingLayout,CheckAuth,About,Contact,ProductFilter,ProductTile,ProductDetails};

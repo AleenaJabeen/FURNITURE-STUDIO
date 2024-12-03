@@ -5,6 +5,7 @@ import {
   AdminLayout,
   ShoppingLayout,
   CheckAuth,
+  ProductDetails,
 } from "./components";
 import { ToastContainer } from "react-toastify";
 import {
@@ -100,7 +101,7 @@ function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="about" element={<AboutUs />} />
           <Route path="contact" element={<ContactUs />} />
-          
+         <Route path="product-details/:id" element={<ProductDetails />}/>
         </Route>
         <Route path="/unauth-page" element={<UnauthPage />} />
         <Route path="*" element={<NotFound />} />
