@@ -22,6 +22,7 @@ import {
   Listing,
   ContactUs,AboutUs,
   UnauthPage,
+  Cart
 } from "./pages";
 import { checkAuth } from "./store/auth-slice";
 import { useSelector, useDispatch } from "react-redux";
@@ -101,6 +102,7 @@ function App() {
           <Route path="checkout" element={<Checkout />} />
           <Route path="about" element={<AboutUs />} />
           <Route path="contact" element={<ContactUs />} />
+          <Route path="cart" element={<Cart />} />
          <Route path="product-details/:id" element={<ProductDetails />}/>
         </Route>
         <Route path="/unauth-page" element={<UnauthPage />} />

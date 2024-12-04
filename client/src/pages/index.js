@@ -11,7 +11,8 @@ import Home from "./shopping-view/Home";
 import Listing from "./shopping-view/Listing";
 import AboutUs from "./shopping-view/AboutUs";
 import ContactUs from "./shopping-view/ContactUs";
+import Cart from "./shopping-view/Cart";
 import UnauthPage from "./unauth";
 
 
-export{Login,Register,Dashboard,Products,Features,Orders,NotFound,Account,Checkout,Home,Listing,UnauthPage,AboutUs,ContactUs}
+export{Login,Register,Dashboard,Products,Features,Orders,NotFound,Account,Checkout,Home,Listing,UnauthPage,AboutUs,ContactUs,Cart}

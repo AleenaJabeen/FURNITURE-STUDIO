@@ -1,0 +1,226 @@
+.shoppingcart,.checkoutpage{
+    background-color: var(--tm-secondary-bg);
+    color: var(--text-color);
+}
+.cart-items {
+    margin: 1rem 3rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    text-align: left;
+    padding: 0.5rem;
+    color: var(--primary-color);
+}
+
+td {
+    height: auto;
+    padding: 1rem 0;
+    text-align: left;
+}
+
+.details p{
+    text-decoration: underline;
+}
+.details svg{
+    font-size: 25px;
+}
+.details svg:hover{
+    color: var(--primary-color);
+}
+
+.productImg {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+}
+
+.details {
+    text-align: left;
+}
+
+.quantity {
+    font-size: 1.5rem;
+    padding: 0 10px;
+}
+
+.plus {
+    font-size: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    height: 35px;
+  width: 35px;
+}
+.minus {
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  height: 35px;
+  width: 35px;
+    font-size: 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+}
+.subtotal{
+    margin: 2rem;
+    gap: 0.5rem;
+}
+.subtotal h2{
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.subtotal .amount{
+    color: var(--primary-color);
+    padding-left: 3rem;
+}  
+  .CheckBtn{
+    text-decoration: none;
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+  }
+  .CheckBtn:hover{
+    background-color: var(--primary-color);
+    color: var(--text-color);
+  }
+  
+  .listCart .item img {
+    width: 100%;
+  }
+  
+  .listCart .item {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr ;
+    gap: 7px;
+    text-align: center;
+    padding: 10px;
+    align-items: center;
+  }
+  
+  /* .listCart .quantity span {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  } */
+  
+  .listCart .quantity span:nth-child(2) {
+    background-color: transparent;
+    cursor: auto;
+    padding: 0 10px;
+  }
+  .checkoutpage input, .checkoutpage select{
+    outline: none !important;
+  box-shadow: none !important;
+  background-color: transparent;
+    color: var(--text-skincolor-bg) !important;
+    border: 1px solid var(--text-skincolor-bg);
+    border-radius: 0;
+    font-size: 15px;
+  }
+  .checkoutpage input::placeholder{
+    color: var(--text-skincolor-bg);
+  }
+  .checkoutpage .radioBtns{
+    border: 1px solid var(--text-skincolor-bg) !important;
+    background-color: transparent;
+      color: var(--text-skincolor-bg) !important;
+  }
+  .checkout-info{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .listCart .item:nth-child(even) {
+    background-color: white;
+  }
+  
+  .listCart {
+    overflow: auto;
+  }
+  
+  .listCart::-webkit-scrollbar {
+    width: 0;
+  }
+  @media (max-width:770px){
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+    th  , .totalPrice {
+        display: none;
+    }
+    tr {
+        margin-bottom: 0.5rem;
+    }
+    tbody tr{
+        border-bottom:2px solid var(--primary-color) ;
+    }
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border: none;
+    }
+    .productImg {
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .productImg img {
+        width: 15rem;
+        height: 15rem;
+    }
+    .details{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .quantity{
+      margin: 0;
+    }
+    .quantity, .plus, .minus {
+        font-size: 1rem;
+    }
+    .plus, .minus {
+        width: 2rem;
+        height: 2rem;
+        padding: 0.2rem;
+        text-align: center;
+    }
+  }
+
+@media (max-width:450px){
+    .productImg img {
+        width: 10rem;
+        height: 10rem;
+    }
+    .subtotal{
+        text-align: center !important;
+        padding: 0;
+        margin: 0;
+        margin-top: 18px;
+        gap: 0.5rem;
+        padding: 0;
+    }
+    .subtotal .amount{
+        padding-left: 0;
+    }
+    .CheckBtn{
+      width: 60% !important;
+    }
+
+}

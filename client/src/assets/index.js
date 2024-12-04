@@ -1,3 +1,6 @@
+
+
+
 // Shopping view Images
 import logo from './ShoppingAssets/furnitureLogo.png';
 // About
@@ -11,3 +14,17 @@ import ContactBanner from './ShoppingAssets/ContactAssets/ContactBanner.jpg';
 import ContactFormImg from './ShoppingAssets/ContactAssets/ContactFormImg.jpg';
 export {aboutBanner,luxuryAbout,mission,President,VicePresident,ContactBanner,ContactFormImg}
 export {logo};
+import opulent from './HomeAssets/opulent.jpg';
+import modern from './HomeAssets/modern.jpg';
+import trendy from './HomeAssets/trendy.jpg';
+import aboutLuxury from './HomeAssets/AboutLuxury.jpg';
+import category1 from './HomeAssets/category1.jpg';
+import category2 from './HomeAssets/category2.jpg';
+import category3 from './HomeAssets/category3.jpg';
+import before from './HomeAssets/before.jpg';
+import after from './HomeAssets/after.jpg';
+import carousel1 from './HomeAssets/carouselImg1.avif';
+import carousel2 from './HomeAssets/carouselImg2.avif';
+
+
+export {opulent,modern,trendy,aboutLuxury,category1, category2, category3,before, after,carousel1,carousel2};

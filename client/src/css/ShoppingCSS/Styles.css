@@ -16,6 +16,9 @@
   .nav-link.active,.nav-link:hover{
     color: var(--text-skincolor-bg) !important;
   }
+  .cartLink.active,.cartLink:hover{
+    color: var(--text-color) !important;
+  }
   .nav-link.activate{
     color: var(--text-color);
   }
@@ -41,6 +44,11 @@
     color: var(--text-skincolor-bg);
     border-top: 2px solid var(--text-skincolor-bg);
     animation: borderSlide 1s linear;
+  }
+  .navbar-nav li.cart-icon a:hover{
+    border-top: none;
+    animation: none;
+    color: var(--text-color);
   }
   .loginIcon{
     font-size: 2rem;
