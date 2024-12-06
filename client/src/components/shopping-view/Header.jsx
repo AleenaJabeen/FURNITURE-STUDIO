@@ -13,6 +13,7 @@ import { TiArrowSortedDown } from "react-icons/ti";
 import { shoppingViewMenuItems } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutUser } from "../../store/auth-slice";
+import { Link } from "react-router-dom";
 
 function MenuItems() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
@@ -79,16 +80,12 @@ function MenuItems() {
 function HeaderRight() {
   const { cartItems } = useSelector((state) => state.shopCart);
   const [isOpen, setIsOpen] = useState(false);
-  const navigate = useNavigate();
   const { user } = useSelector((state) => state.auth);
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
   const handleClose = () => {
     setIsOpen(false);
-  };
-  const handleNavigate = () => {
-    navigate("/shop/account");
   };
   const dispatch = useDispatch();
 
@@ -109,7 +106,7 @@ function HeaderRight() {
             onClick={handleClose}
           >
             <FaCartShopping className="loginIcon" />
-            <span class="position-absolute fw-bold text-sm rounded-circle d-flex justify-content-center align-items-center" style={{top: "-4px", right: "7px",backgroundColor:"var(--primary-color)", height:"25px",width:"25px"}}>{totalQuantity || 0}</span>
+            <span className="position-absolute fw-bold text-sm rounded-circle d-flex justify-content-center align-items-center" style={{top: "-4px", right: "7px",backgroundColor:"var(--primary-color)", height:"25px",width:"25px"}}>{totalQuantity || 0}</span>
 
           </NavLink>
         </li>
@@ -123,11 +120,10 @@ function HeaderRight() {
             </div>
             <ul className={`side ${isOpen ? "d-block" : "d-none"}`}>
               <li>Logging in as {user.userName.toUpperCase()}</li>
-              <li onClick={handleNavigate}>
-                {" "}
+              <li><Link to={"/shop/account"} className="link">
                 <IoPersonOutline className="loginIcon" />
                 Account
-              </li>
+              </Link></li>
               <li onClick={handleLogout}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -157,13 +153,9 @@ function HeaderRight() {
 
 function ShoppingHeader() {
   const { isAuthenticated, user } = useSelector((state) => state.auth);
-  console.log("userb", user);
   const [isOpen, setIsOpen] = useState(false);
   const handleToggle = () => {
     setIsOpen(!isOpen);
-  };
-  const handleClose = () => {
-    setIsOpen(false);
   };
 
   return (

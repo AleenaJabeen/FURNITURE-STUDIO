@@ -3,6 +3,7 @@
 
 // Shopping view Images
 import logo from './ShoppingAssets/furnitureLogo.png';
+
 // About
 import aboutBanner from './ShoppingAssets/AboutAssets/aboutBanner.jpg';
 import luxuryAbout from './ShoppingAssets/AboutAssets/luxurryAbout.jpg';
@@ -26,5 +27,9 @@ import after from './HomeAssets/after.jpg';
 import carousel1 from './HomeAssets/carouselImg1.avif';
 import carousel2 from './HomeAssets/carouselImg2.avif';
 
+import accountBanner from './ShoppingAssets/accountBanner.avif';
 
-export {opulent,modern,trendy,aboutLuxury,category1, category2, category3,before, after,carousel1,carousel2};
+
+
+
+export {opulent,modern,trendy,aboutLuxury,category1, category2, category3,before, after,carousel1,carousel2,accountBanner};

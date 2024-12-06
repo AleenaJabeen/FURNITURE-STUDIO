@@ -1,6 +1,7 @@
 import React from "react";
 import Input from '../ui/forms/Input';
-import styles from '../../css/AuthCSS/register.module.css'
+import styles from '../../css/AuthCSS/register.module.css';
+import TextArea from '../ui/forms/TextArea';
 
 function CommonForm({
   formControls,
@@ -66,7 +67,7 @@ function CommonForm({
 
       case "textarea": // For a multiline text input.
         element = (
-          <Textarea
+          <TextArea
             name={getControlItem.name} // Name attribute for the textarea.
             placeholder={getControlItem.placeholder} // Placeholder for user guidance.
             id={getControlItem.id} // ID for the element.
@@ -117,7 +118,7 @@ function CommonForm({
       </div>
     ))}
   </div>
-  <button disabled={isBtnDisabled} type="submit" className={styles.registerBtn}>
+  <button disabled={isBtnDisabled} type="submit" className={`${isBtnDisabled?styles.disabled:""} ${styles.registerBtn}`}>
     {buttonText || "Submit"}
   </button>
 </form>

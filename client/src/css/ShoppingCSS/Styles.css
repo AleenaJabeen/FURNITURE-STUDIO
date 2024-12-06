@@ -67,7 +67,7 @@
     right: 50px;
     border-radius: 30px;
   }
-  .side li{
+  .side li,.side .link{
     display:flex;
     justify-content: flex-start;
     align-items: center;
@@ -76,6 +76,7 @@
     font-size: 1.25rem;
     gap: 1rem;
     z-index: 1111;
+    text-decoration: none;
   }
   /* Hide the custom dropdown by default */
 .custom-dropdown {

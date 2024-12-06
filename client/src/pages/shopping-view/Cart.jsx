@@ -2,6 +2,7 @@ import React  from "react";
 import "../../css/ShoppingCSS/cart.css";
 import CartTable from "../../components/shopping-view/CartTable";
 import {  useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 // import {useNavigate} from 'react-router-dom';
 
 export default function Cart() {
@@ -19,10 +20,10 @@ export default function Cart() {
         )
       : 0;
     
-//   const navigate = useNavigate();
-//   const checkoutPage =()=>{
-//     navigate("/checkout")
-// }
+  const navigate = useNavigate();
+  const checkoutPage =()=>{
+    navigate("/shop/checkout")
+}
   return (
     <div className="container-fluid px-5 py-3 shoppingcart">
       <h1 className="text-center">Shopping Cart</h1>
@@ -35,9 +36,9 @@ export default function Cart() {
             Subtotal: <span className="amount">$ {totalCartAmount}</span>
           </h2>
           <div>
-            <button className="CheckBtn rounded-0 w-25 p-2"  >
+            <button className="CheckBtn rounded-0 w-25 p-2" onClick={checkoutPage} >
               Check out
-              {/* onClick={checkoutPage} */}
+              
             </button>
           </div>
         </div>
