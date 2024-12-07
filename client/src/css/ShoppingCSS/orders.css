@@ -1,0 +1,86 @@
+.ordersSection h2{
+    color: var(--tm-skincolor-text);
+    text-align: left;
+    padding-bottom: 1rem;
+}
+
+
+
+.orderTable table{
+border: 1px solid var(--tm-skincolor-text);
+}
+.orderTable thead tr th{
+    font-size: 1.25rem;
+}
+.orderTable tbody tr td{
+    font-size: 1.25rem;
+    color: var(--tm-skincolor-text);
+    text-align: left;
+    padding-left: .5rem;
+}
+.orderTable tbody tr td button{
+    border: none;
+    background-color: var(--tm-skincolor-text);
+    color: white;
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    padding: .25rem .75rem;
+    border-radius:10px ;
+}
+/* dialog box */
+.dialogBox{
+    position: fixed;
+    overflow-y: scroll;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--tm-skincolor-text);
+    z-index: 1111;
+    height:400px;
+color: black;
+width: 600px;
+padding: 1rem;
+
+}
+/* For Webkit-based browsers (Chrome, Safari, Edge) */
+.dialogBox::-webkit-scrollbar {
+    width: 12px;
+    /* Scrollbar width */
+  }
+  
+  .dialogBox::-webkit-scrollbar-thumb {
+    background-color: black; /* Scroll thumb color */
+    border-radius: 20px;
+    /* Rounded corners for the thumb */
+  }
+  
+  .dialogBox::-webkit-scrollbar-track {
+    background-color: transparent;
+    border-radius: 20px;
+    padding: .25rem; /* Set track background to transparent */
+  }
+  
+  /* Firefox */
+  .dialogBox{
+    scrollbar-width: thin; /* Thin scrollbar */
+    scrollbar-color: black transparent; /* Scroll thumb black, track transparent */
+  }
+.select select{
+    width: 50%;
+    background-color: transparent;
+    border: 2px solid black;
+    color: black;
+  }
+  .select .registerBtn{
+    width: 100px;
+    background-color: black!important;
+  }
+.close img{
+   width: 30px;
+   height: 30px;
+}
+.dialogContent p,.dialogContent label{
+    padding-top: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}

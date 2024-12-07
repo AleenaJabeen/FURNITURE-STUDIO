@@ -1,10 +1,11 @@
 import React from 'react'
+import { AdminOrders } from '../../components'
 
 function Orders() {
   return (
-    <div>
-      orders page
-    </div>
+    <>
+    <AdminOrders/>
+    </>
   )
 }
 

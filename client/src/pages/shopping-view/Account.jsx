@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import Banner from '../../components/ui/AboutPage/Banner';
 import { accountBanner } from '../../assets';
 import styles from '../../css/ShoppingCSS/Account.module.css';
-import Orders from '../../components/shopping-view/Orders';
+import { ShoppingOrders } from '../../components';
 import Address from '../../components/shopping-view/Address';
 
 function Account() {
@@ -24,7 +24,7 @@ function Account() {
       <div onClick={() => handleButtonClick("address") } className={`${selectedComponent==="address"?styles.parentBoxActive:""} ${styles.parentBox} col-md-2 ms-2`}>Address</div>
 
       <div>
-        {selectedComponent === "orders" && <Orders />}
+        {selectedComponent === "orders" && <ShoppingOrders />}
         {selectedComponent === "address" && <Address />}
       </div>
     </div>

@@ -28,8 +28,9 @@ import carousel1 from './HomeAssets/carouselImg1.avif';
 import carousel2 from './HomeAssets/carouselImg2.avif';
 
 import accountBanner from './ShoppingAssets/accountBanner.avif';
+import closeIcon from './AuthAssets/x-01.png';
 
 
 
 
-export {opulent,modern,trendy,aboutLuxury,category1, category2, category3,before, after,carousel1,carousel2,accountBanner};
+export {opulent,modern,trendy,aboutLuxury,category1, category2, category3,before, after,carousel1,carousel2,accountBanner,closeIcon};

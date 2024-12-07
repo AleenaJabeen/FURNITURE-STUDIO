@@ -7,4 +7,7 @@ import Contact from "./ui/ContactPage/Contact";
 import ProductFilter from "./shopping-view/Filter";
 import ProductTile from "./shopping-view/ProductTile";
 import ProductDetails from "./shopping-view/ProductDetails";
-export{AuthLayout,AdminLayout,ShoppingLayout,CheckAuth,About,Contact,ProductFilter,ProductTile,ProductDetails};
+import ShoppingOrders from "./shopping-view/Orders";
+import AdminOrders from "./admin-view/Orders";
+import AdminOrderDetailsView from "./admin-view/order-details";
+export{AuthLayout,AdminLayout,ShoppingLayout,CheckAuth,About,Contact,ProductFilter,ProductTile,ProductDetails,ShoppingOrders,AdminOrders,AdminOrderDetailsView};

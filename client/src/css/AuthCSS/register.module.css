@@ -54,6 +54,12 @@
     border: 3px solid var(--primary-color);
     
   }
+  .select{
+    width: 50%;
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+  }
   .registerForm input::placeholder,.registerForm::placeholder{
       color: var(--primary-color);
   font-size: 20px;
