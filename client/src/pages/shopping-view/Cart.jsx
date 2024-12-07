@@ -3,7 +3,6 @@ import "../../css/ShoppingCSS/cart.css";
 import CartTable from "../../components/shopping-view/CartTable";
 import {  useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-// import {useNavigate} from 'react-router-dom';
 
 export default function Cart() {
     const { cartItems } = useSelector((state) => state.shopCart);
@@ -36,9 +35,8 @@ export default function Cart() {
             Subtotal: <span className="amount">$ {totalCartAmount}</span>
           </h2>
           <div>
-            <button className="CheckBtn rounded-0 w-25 p-2" onClick={checkoutPage} >
-              Check out
-              
+            <button className="CheckBtn rounded-0 w-25 p-2" onClick={checkoutPage} disabled={cartItems?.items?.length === 0}>
+              Check out             
             </button>
           </div>
         </div>
