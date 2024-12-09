@@ -48,7 +48,7 @@
      align-items: center;
      flex-direction: column;
      gap: 1rem;
-   padding:2rem;
+   padding:2rem 2rem 2rem 0;
  }
  .addressForm h3{
      color: var(--primary-color);
@@ -97,6 +97,9 @@ max-height: 80px;
     border: 1px solid var(--primary-color);
     box-shadow: 1px 1px  7px var(--primary-color);
     border-radius: 10px;
+ }
+ .selectedAddressCard{
+    border: 3px solid var(--primary-color);
  }
  .addressCard label{
 font-size: 1.25rem;

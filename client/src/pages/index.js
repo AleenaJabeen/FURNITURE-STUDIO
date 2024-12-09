@@ -13,6 +13,7 @@ import AboutUs from "./shopping-view/AboutUs";
 import ContactUs from "./shopping-view/ContactUs";
 import Cart from "./shopping-view/Cart";
 import UnauthPage from "./unauth";
+import OrderCompleted from "./shopping-view/OrderCompleted";
 
 
-export{Login,Register,Dashboard,Products,Features,Orders,NotFound,Account,Checkout,Home,Listing,UnauthPage,AboutUs,ContactUs,Cart}
+export{Login,Register,Dashboard,Products,Features,Orders,NotFound,Account,Checkout,Home,Listing,UnauthPage,AboutUs,ContactUs,Cart,OrderCompleted}

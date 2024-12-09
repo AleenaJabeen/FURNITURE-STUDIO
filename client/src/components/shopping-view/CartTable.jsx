@@ -13,51 +13,55 @@ import "react-toastify/dist/ReactToastify.css";
 export default function CartTable() {
   const { user } = useSelector((state) => state.auth);
   const { cartItems } = useSelector((state) => state.shopCart);
-//   const { productList } = useSelector((state) => state.shopProducts);
+  const { productList } = useSelector((state) => state.shoppingProducts);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCartItems(user?.id));
   }, [dispatch]);
 
+  console.log(productList);
+  
+
   function handleUpdateQuantity(getCartItem, typeOfAction) {
-    // if (typeOfAction == "plus") {
-    //   let getCartItems = cartItems.items || [];
+    if (typeOfAction == "plus") {
+      let getCartItems = cartItems.items || [];
 
-    //   if (getCartItems.length) {
-    //     const indexOfCurrentCartItem = getCartItems.findIndex(
-    //       (item) => item.productId === getCartItem?.productId
-    //     );
+      if (getCartItems.length) {
+        const indexOfCurrentCartItem = getCartItems.findIndex(
+           (item) => item.productId === getCartItem?.productId
+        );
 
-    //     const getCurrentProductIndex = productList.findIndex(
-    //       (product) => product._id === getCartItem?.productId
-    //     );
-    //     const getTotalStock = productList[getCurrentProductIndex].totalStock;
+        const getCurrentProductIndex = productList.findIndex(
+          (product) => product._id === getCartItem?.productId
+        );
+        const getTotalStock = productList[getCurrentProductIndex].totalStock
+        ;
 
-    //     console.log(getCurrentProductIndex, getTotalStock, "getTotalStock");
+        console.log(getCurrentProductIndex, getTotalStock, "getTotalStock");
 
-    //     if (indexOfCurrentCartItem > -1) {
-    //       const getQuantity = getCartItems[indexOfCurrentCartItem].quantity;
-    //       if (getQuantity + 1 > getTotalStock) {
-    //         const message = `Only ${getQuantity} quantity can be added for this item`;
-    //         toast.error(message, {
-    //           position: "bottom-right",
-    //           autoClose: 3000,
-    //           style: {
-    //             fontSize: "16px",
-    //             fontWeight: "bold",
-    //             fontFamily: "'Arial', sans-serif",
-    //             padding: "15px",
-    //             color: "#caa571",
-    //             backgroundColor: "#000000",
-    //             textAlign: "center",
-    //           },
-    //         });
+        if (indexOfCurrentCartItem > -1) {
+          const getQuantity = getCartItems[indexOfCurrentCartItem].quantity;
+          if (getQuantity + 1 > getTotalStock) {
+            const message = `Only ${getQuantity} quantity can be added for this item`;
+            toast.error(message, {
+              position: "bottom-right",
+              autoClose: 3000,
+              style: {
+                fontSize: "16px",
+                fontWeight: "bold",
+                fontFamily: "'Arial', sans-serif",
+                padding: "15px",
+                color: "#caa571",
+                backgroundColor: "#000000",
+                textAlign: "center",
+              },
+            });
 
-    //         return;
-    //       }
-    //     }
-    //   }
-    // }
+            return;
+          }
+        }
+      }
+    }
 
     dispatch(
       updateCartQuantity({
