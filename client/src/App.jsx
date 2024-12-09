@@ -28,6 +28,7 @@ import {
 import { checkAuth } from "./store/auth-slice";
 import { useSelector, useDispatch } from "react-redux";
 import LoadingPage from "./components/ui/common/LoadingPage";
+import Search from "./pages/shopping-view/Search";
 
 function App() {
   const { user, isAuthenticated, isLoading } = useSelector(
@@ -104,6 +105,7 @@ function App() {
           <Route path="about" element={<AboutUs />} />
           <Route path="contact" element={<ContactUs />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="search" element={<Search />} />
          <Route path="product-details/:id" element={<ProductDetails />}/>
          <Route path="order-completed" element={<OrderCompleted />}/>
         </Route>

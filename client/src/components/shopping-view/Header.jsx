@@ -8,7 +8,8 @@ import {
 import "../../css/ShoppingCSS/Styles.css";
 import { IoPersonOutline } from "react-icons/io5";
 import { FaCartShopping } from "react-icons/fa6";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate,useLocation,
+  useSearchParams, } from "react-router-dom";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { shoppingViewMenuItems } from "../../config";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,12 +19,36 @@ import { Link } from "react-router-dom";
 function MenuItems() {
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
   const handleClose = () => {
     setIsOpen(false);
   };
+
+  function handleNavigate(getCurrentMenuItem) {
+    sessionStorage.removeItem("filters");
+    const currentFilter =
+      getCurrentMenuItem.id !== "home" &&
+      getCurrentMenuItem.id !== "products" &&
+      getCurrentMenuItem.id !== "search"
+        ? {
+            category: [getCurrentMenuItem.id],
+          }
+        : null;
+
+    sessionStorage.setItem("filters", JSON.stringify(currentFilter));
+
+    location.pathname.includes("listing") && currentFilter !== null
+      ? setSearchParams(
+          new URLSearchParams(`?category=${getCurrentMenuItem.id}`)
+        )
+      : navigate(getCurrentMenuItem.path);
+  }
+
   return (
-    <nav className="navbar navbar-expand-lg ms-auto">
-      <ul className="navbar-nav ms-auto">
+    <nav className="navbar navbar-expand-lg ms-auto py-0">
+      <ul className="navbar-nav ms-auto py-0">
         {shoppingViewMenuItems.map((menuItem) => {
           if (menuItem.id === "categories") {
             // Render dropdown for "Categories"
@@ -46,7 +71,7 @@ function MenuItems() {
                         }
                         to={subcategory.path}
                         key={subcategory.id}
-                        onClick={handleClose}
+                        onClick={() => handleNavigate(menuItem)}
                       >
                         {subcategory.label}
                       </NavLink>
@@ -61,10 +86,11 @@ function MenuItems() {
               <li className="nav-item px-2" key={menuItem.id}>
                 <NavLink
                   to={menuItem.path}
+                  style={{fontSize:"1rem"}}
                   className={({ isActive }) =>
-                    `nav-link ${isActive ? "active" : ""}`
+                    `nav-link  ${isActive ? "active" : ""}`
                   }
-                  aria-current="page"
+                  aria-current="page" 
                   onClick={handleClose}
                 >
                   {menuItem.label}
@@ -98,7 +124,7 @@ function HeaderRight() {
   const totalQuantity = cartItems?.items?.reduce((total, item) => total + item.quantity, 0);
   return (
     <>
-      <ul className="navbar-nav ms-auto">
+      <ul className="navbar-nav ms-auto oy-0">
         <li className="nav-item px-2 ms-auto cart-icon position-relative">
           <NavLink
             className={({ isActive }) => `nav-link cartLink ${isActive ? "active" : ""}`}
@@ -120,10 +146,10 @@ function HeaderRight() {
             </div>
             <ul className={`side ${isOpen ? "d-block" : "d-none"}`}>
               <li>Logging in as {user.userName.toUpperCase()}</li>
-              <li><Link to={"/shop/account"} className="link">
-                <IoPersonOutline className="loginIcon" />
-                Account
-              </Link></li>
+              <li className=""><Link to={"/shop/account"} className="text-decoration-none border-0 d-flex align-items-center gap-1" style={{color:"#caa571"}}>
+              <span><IoPersonOutline className="fs-2 pe-2" /></span>
+                <span>Account</span> </Link>
+             </li>
               <li onClick={handleLogout}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +186,7 @@ function ShoppingHeader() {
 
   return (
     <>
-      <header className="navbar navbar-expand-lg">
+      <header className="navbar navbar-expand-lg py-0">
         <div className="container-fluid">
           <div className="navbar-brand">
             <img src={logo} alt="Logo" />

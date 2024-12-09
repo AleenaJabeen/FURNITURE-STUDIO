@@ -11,6 +11,7 @@
   }
   .nav-link{
     color: var(--text-color);
+    text-transform: uppercase;
   }
 
   .nav-link.active,.nav-link:hover{
@@ -38,7 +39,7 @@
   
   .navbar-nav li a {
     color: var(--text-color);
-    font-size: 1.05rem;
+
   }
   .navbar-nav li a:hover {
     color: var(--text-skincolor-bg);
@@ -67,17 +68,18 @@
     right: 50px;
     border-radius: 30px;
   }
-  .side li,.side .link{
+  .side li{
     display:flex;
     justify-content: flex-start;
-    align-items: center;
-    padding: 2rem;
+    align-items: flex-start;
+    padding: 1rem;
     background-color: var(--tm-secondary-bg);
-    font-size: 1.25rem;
+    font-size: 1rem;
     gap: 1rem;
     z-index: 1111;
     text-decoration: none;
   }
+ 
   /* Hide the custom dropdown by default */
 .custom-dropdown {
     display: none;
@@ -311,14 +313,21 @@
       height: max-content;
       padding: 4rem 1rem 1rem 1rem;
   }
+  .footer-brand{
+    padding: -1rem;
+  
+  }
   .footer-brand img{
   width: 100px;
-  height: 100px;
+  height: 120px;
   object-fit: cover;
   }
   .footer-brand p{
+    padding-top: 0;
+    margin-top: 0;
       font-size: 2rem;
-      line-height: 40px;
+      line-height: 30px;
+      color: var(--text-skincolor-bg);
   }
   
   .footerBox ul h4{

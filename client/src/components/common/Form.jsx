@@ -118,9 +118,11 @@ function CommonForm({
       </div>
     ))}
   </div>
-  <button disabled={isBtnDisabled} type="submit" className={`${isBtnDisabled?styles.disabled:""} ${styles.registerBtn}`}>
+  <div className="d-flex justify-content-center align-self-center">
+  <button disabled={isBtnDisabled} type="submit" className={`${isBtnDisabled?styles.disabled:""} ${styles.registerBtn} ${buttonText==="Update Order Status"?"bg-black":""}`}>
     {buttonText || "Submit"}
   </button>
+  </div>
 </form>
 
   );

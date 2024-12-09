@@ -90,7 +90,7 @@ function MenuItems({ setOpen }) {
             navigate(menuItem.path);
             setOpen ? setOpen(false) : null;
           }}
-          className="d-flex  fs-4 align-items-center gap-2 rounded px-3 py-2"
+          className="d-flex  fs-5 align-items-center gap-2 rounded px-3 py-2"
           style={{color:"var(--primary-color)", cursor:"pointer"}}
         >
           {menuItem.icon}
@@ -132,7 +132,7 @@ function Sidebar({ open, setOpen }) {
             <path d="M4 18v3" />
             <path d="M8 14v7" />
           </svg>
-          <h1 className="fs-2 fw-bolder mb-0">Admin Panel</h1>
+          <h1 className="fs-4 fw-bolder mb-0">Admin Panel</h1>
         </div>
         <MenuItems />
       </aside>

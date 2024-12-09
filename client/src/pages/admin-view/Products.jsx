@@ -152,7 +152,7 @@ function Products() {
         <div
           className={`d-flex cursor-pointer mb-4 justify-content-between align-items-center gap-2 ${styles.mainheading}`}
         >
-          <h1 className="fs-2 fw-bolder mb-0">{currentEditedId !== null ? "Edit Product" : "Add New Product"}</h1>
+          <h1 className="fs-3 fw-bolder mb-0">{currentEditedId !== null ? "Edit Product" : "Add New Product"}</h1>
           <svg
             onClick={() =>{ setOpenCreateProductsDialog(false);
               setCurrentEditedId(null);

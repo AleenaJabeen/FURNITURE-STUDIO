@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import CommonForm from '../common/form';
+import CommonForm from '../common/Form';
 import styles from '../../css/ShoppingCSS/Account.module.css';
 import {addressFormControls} from '../../config';
 import { useDispatch, useSelector } from "react-redux";

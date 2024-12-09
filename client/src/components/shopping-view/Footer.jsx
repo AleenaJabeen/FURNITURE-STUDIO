@@ -1,5 +1,5 @@
 import React from "react";
-import { logo } from "../../assets";
+import { logoLight } from "../../assets";
 import "../../css/ShoppingCSS/Styles.css";
 import { Link } from "react-router-dom";
 
@@ -10,8 +10,8 @@ export default function Footer() {
         <div className="container">
           <div className="row footerItems">
             <div className="col-lg-3 col-sm-6">
-              <div className="footer-brand"><img src={logo} alt="Logo" />
-              <p>Furniture <br /> Studio</p></div>
+              <div className="footer-brand"><img src={logoLight} alt="Logo" />
+              <p>Furniture Studio</p></div>
             </div>
             <div className="col-lg-3 col-sm-6">
               <div className="footerBox">

@@ -86,6 +86,11 @@ export const registerFormControls = [
        label:'ABOUT US',
         path:'/shop/about'
     },
+    {
+      id:'products',
+       label:'PRODUCTS',
+        path:'/shop/listing'
+    },
     { id:"categories",
       label:'CATEGORIES',
       path:'/shop/listing',
@@ -93,17 +98,17 @@ export const registerFormControls = [
        [{
       id:'furniture',
       label:'Luxury Furniture',
-      path:'/shop/listing'
+      path:'/shop/listing?category=categories%2'
     },
     {
       id:'lighting',
       label:'Lighting',
-      path:'/shop/listing'
+      path:'/shop/listing?category=categories%2Clighting'
     },
      {
       id:'accessories',
       label:'Accessories',
-      path:'/shop/listing'
+      path:'/shop/listing?category=categories%2Caccessories'
     }
   ]
   },
@@ -111,7 +116,12 @@ export const registerFormControls = [
     id:'contact',
      label:'CONTACT US',
       path:'/shop/contact'
-  }
+  },
+  {
+    id:'search',
+     label:'Search',
+      path:'/shop/search'
+  },
 
 
   ];

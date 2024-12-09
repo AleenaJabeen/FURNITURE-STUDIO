@@ -11,7 +11,7 @@ function ProductFilter({filters,handleFilters}) {
         {filterOptions[keyItem].map((option, index) => (
           <p
             key={option.id || index} // Prefer option.id if available, fallback to index
-            className={`${styles.filterProduct} col-lg-2 col-6`}
+            className={`${styles.filterProduct} col-lg-2 col-md-4`}
             onClick={()=>{handleFilters(keyItem,option.id); console.log(option.id)}}
 
           >

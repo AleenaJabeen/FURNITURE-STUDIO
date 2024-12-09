@@ -1,6 +1,7 @@
 import React from "react";
 import "../../css/ShoppingCSS/allProducts.css";
 import { useNavigate } from "react-router-dom";
+import { FaCartShopping } from "react-icons/fa6";
 function ProjectTile({ products, handleAddtoCart }) {
   const navigate = useNavigate();
   const handleClick = () => {
@@ -18,6 +19,7 @@ function ProjectTile({ products, handleAddtoCart }) {
             alt={products?.title}
             onClick={handleClick}
           />
+          
           {products?.totalStock === 0 ? (
             <button className="btn rounded-0 w-100 cartBtn fw-bold">
               Out of Stock
@@ -29,9 +31,28 @@ function ProjectTile({ products, handleAddtoCart }) {
                 handleAddtoCart(products?._id, products?.totalStock)
               }
             >
-              Add to Cart
+            <FaCartShopping  className="fs-2 pb-2"/>
             </button>
+            
           )}
+          
+        </div>
+        <div className="card-body">
+          <h2 className="fs-5 fw-bold mb-2 mt-2"
+          style={{color:"var(--text-color)"}}>{products?.title}</h2>
+          <div className="d-flex justify-content-between align-items-center mb-2">
+            <span
+              className={`${
+                products?.salePrice > 0 ? "text-decoration-line-through" : ""
+              } fs-6 fw-semibold`}
+              style={{color:"var(--primary-color)"}}
+            >
+              ${products?.price}
+            </span>
+            {products?.salePrice > 0 ? (
+              <span className="fs-6 fw-bold" style={{color:"var(--primary-color)"}}>${products?.salePrice}</span>
+            ) : null}
+          </div>
         </div>
       </div>
     </>

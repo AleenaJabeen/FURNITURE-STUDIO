@@ -87,7 +87,7 @@
   }
   .registerBtn{
     margin-top: 1rem;
-   width: 40%;
+   width: 60%;
   background-color: var(--primary-color);
   height: 50px;
   font-size: 25px;
@@ -98,6 +98,7 @@
   text-decoration: none;
 border: none;
   }
+
   .disabled{
    background-color: rgb(121, 124, 96);
   }

@@ -28,6 +28,7 @@
     line-height: 1.5rem;
     padding: 1rem;
   }
+  
   .filterProduct.active,.filterProduct:hover{
     background-color: var(--text-skincolor-bg);
   }
@@ -37,4 +38,17 @@
     align-items: flex-start;
     color: var(--text-color);
     padding: 2rem;
+  }
+  .custom-dropdown {
+    position: absolute;
+    background-color: #fff;
+    z-index: 1000;
+    display: block; /* Ensure it shows */
+  }
+  
+  @media (max-width: 768px) {
+    .custom-dropdown {
+      position: static; /* Allow stacking */
+      width: 100%; /* Full width for smaller screens */
+    }
   }
