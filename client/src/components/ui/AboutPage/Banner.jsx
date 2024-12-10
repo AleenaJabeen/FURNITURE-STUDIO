@@ -6,11 +6,13 @@ const Banner = ({ image, title }) => {
             className="d-flex align-items-center justify-content-center text-white text-center"
             style={{
                 backgroundImage: `linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url(${image})`,
-                backgroundSize: 'fill',
+                backgroundSize: window.innerWidth <768?'cover':'fill',
                 backgroundPosition: 'center',
                 width: '100%',
                 height: '60vh',
                 position: 'relative',
+                backgroundRepeat:window.innerWidth < 768 ? "no-repeat":"repeat",
+                
             }}
         >
             <div>

@@ -149,7 +149,7 @@
     left: 45%;
     transform: translate(-50%,-50%);
     padding: 12rem 6rem 12rem 7rem;
-   visibility: hidden;
+   display: none;
    transition: all 0.2s ease-in-out;
   }
   .box h4{
@@ -160,17 +160,17 @@
     font-weight: 600;
   }
   .opulent:hover .box{
-  visibility: visible;
+    display: block;
   backdrop-filter: blur(2px);
   
   }
   .modern:hover .box{
-    visibility: visible;
+    display: block;
     backdrop-filter: blur(2px);
     
     }
     .trendy:hover .box{
-      visibility: visible;
+      display: block;
       backdrop-filter: blur(2px);
       }
   /* About luxury styling */
@@ -349,5 +349,34 @@
   .footer-bottom p{
       font-size: .85rem;
       color: var(--footer-text-color);
+  }
+  @media (max-width: 768px) {
+    .op,.mo,.tr{
+      background-size: cover;
+     width: 100%;
+      padding: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+    .opulent:hover .box{
+      display: none;
+    backdrop-filter: blur(2px);
+    
+    }
+    .modern:hover .box{
+      display: none;
+      backdrop-filter: blur(2px);
+      
+      }
+      .trendy:hover .box{
+        display: none;
+        backdrop-filter: blur(2px);
+        }
+        .opulent,.modern,.trendy{
+          height: 35vh;
+          margin-bottom: 1rem;
+        }
   }
  

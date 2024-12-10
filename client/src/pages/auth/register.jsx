@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "../../css/AuthCSS/register.module.css";
-import CommonForm from "../../components/common/form";
+import CommonForm from "../../components/common/Form";
 import { registerFormControls } from "../../config";
 import { registerUser } from "../../store/auth-slice";
 import { useDispatch } from "react-redux";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { loginImg } from "../../assets";
 
 const initialState = {
   userName: "",
@@ -50,8 +51,11 @@ function Register() {
   }
   return (
     <>
-      <section className={styles.register}>
+      <section className={`${styles.register} d-flex`}>
         <div className={styles.wrapper}>
+        
+          <img src={loginImg} alt="" className="img-fluid" />
+        </div>
           <div className={styles.registerForm}>
             <h3>Create an Account</h3>
             <CommonForm
@@ -68,7 +72,7 @@ function Register() {
               </Link>
             </div>
           </div>
-        </div>
+       
       </section>
     </>
   );

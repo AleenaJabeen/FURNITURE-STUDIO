@@ -124,7 +124,7 @@ function HeaderRight() {
   const totalQuantity = cartItems?.items?.reduce((total, item) => total + item.quantity, 0);
   return (
     <>
-      <ul className="navbar-nav ms-auto oy-0">
+      <ul className="navbar-nav ms-auto py-0 d-flex align-items-center">
         <li className="nav-item px-2 ms-auto cart-icon position-relative">
           <NavLink
             className={({ isActive }) => `nav-link cartLink ${isActive ? "active" : ""}`}

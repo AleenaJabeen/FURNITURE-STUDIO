@@ -12,7 +12,7 @@ function ProjectTile({ products, handleAddtoCart }) {
     <>
       {/* <Banner image={categoryImage} title={categoryName} /> */}
 
-      <div className="col-lg-3 col-md-4 col-6 productContainer g-5">
+      <div className="col-lg-3 col-md-4 col-sm-6 col-12 productContainer g-5">
         <div className="productCard text-center">
           <img
             src={products?.image}

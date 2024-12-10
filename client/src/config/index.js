@@ -91,27 +91,6 @@ export const registerFormControls = [
        label:'PRODUCTS',
         path:'/shop/listing'
     },
-    { id:"categories",
-      label:'CATEGORIES',
-      path:'/shop/listing',
-      categories:
-       [{
-      id:'furniture',
-      label:'Luxury Furniture',
-      path:'/shop/listing?category=categories%2'
-    },
-    {
-      id:'lighting',
-      label:'Lighting',
-      path:'/shop/listing?category=categories%2Clighting'
-    },
-     {
-      id:'accessories',
-      label:'Accessories',
-      path:'/shop/listing?category=categories%2Caccessories'
-    }
-  ]
-  },
   {
     id:'contact',
      label:'CONTACT US',

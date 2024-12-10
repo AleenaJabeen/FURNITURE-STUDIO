@@ -56,7 +56,6 @@ function App() {
     <>
     <ToastContainer />
       <Routes>
-        
         <Route
           path="/"
           element={

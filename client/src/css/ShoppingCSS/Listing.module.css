@@ -45,7 +45,9 @@
     z-index: 1000;
     display: block; /* Ensure it shows */
   }
-  
+  .filterActive{
+    background-color:var(--text-skincolor-bg);
+  }
   @media (max-width: 768px) {
     .custom-dropdown {
       position: static; /* Allow stacking */

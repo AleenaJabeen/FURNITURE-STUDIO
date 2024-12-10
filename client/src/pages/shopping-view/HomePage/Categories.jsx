@@ -23,7 +23,7 @@ function Categories() {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-12 col-md-6 cardBox">
+          <div className="col-lg-4 col-12 col-md-6 cardBox mb-2">
             <div className="card border-0">
               <img src={category2} className="card-img-top" alt="Lighting" />
               <div className="card-body category">
@@ -38,7 +38,7 @@ function Categories() {
               </div>
             </div>
           </div>
-          <div className="col-lg-4 col-12 col-md-6 cardBox">
+          <div className="col-lg-4 col-12 col-md-6 cardBox mb-2">
             <div className="card border-0">
               <img src={category3} className="card-img-top" alt="Accessories" />
               <div className="card-body category">

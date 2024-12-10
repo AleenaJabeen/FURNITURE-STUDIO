@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styles from '../../css/AuthCSS/register.module.css';
-import CommonForm from "../../components/common/form";
+import CommonForm from "../../components/common/Form";
 import { loginFormControls } from "../../config";
 import { loginUser } from "../../store/auth-slice";
 import { useDispatch } from 'react-redux';
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { loginImg } from "../../assets";
 
 const initialState = {
   email: '',
@@ -58,8 +59,10 @@ function Login() {
 
   return (
     <>
-      <section className={styles.register}>
-        <div className={styles.wrapper}>
+      <section className={`${styles.register} d-flex`}>
+        <div className={`${styles.wrapper}`}>
+          <img src={loginImg} alt="" className="img-fluid" />
+        </div>
           <div className={styles.registerForm}>
             <h3>Login</h3>
             <CommonForm
@@ -73,7 +76,7 @@ function Login() {
               Don't have An Account? <Link to={"/auth/register"} className={styles.span}>Register</Link>
             </div>
           </div>
-        </div>
+       
       </section>
     </>
   );
