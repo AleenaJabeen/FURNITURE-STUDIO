@@ -109,101 +109,6 @@ export default function Checkout() {
           selectedId={currentSelectedAddress}
           setCurrentSelectedAddress={setCurrentSelectedAddress}
         />
-          {/* <h3>Contact</h3>
-          <div className="row">
-            <div className="col">
-              <input type="email" className="p-2 mb-2 w-100" />
-            </div>
-          </div>
-          <h3>Delivery</h3>
-          <div className="row">
-            <div className="col">
-              <select id="country" className="p-2 w-100">
-                <option value="Pakistan">Pakistan</option>
-              </select>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <input
-                type="text"
-                placeholder="First Name"
-                className=" p-2 my-2 w-100"
-              />
-            </div>
-            <div className="col">
-              <input
-                type="text"
-                placeholder="Last Name"
-                className=" p-2 my-2  w-100"
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <input
-                type="text"
-                placeholder="Address"
-                className="p-2 my-2  w-100"
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <input
-                type="text"
-                placeholder="City"
-                className="p-2 my-2  w-100"
-              />
-            </div>
-            <div className="col">
-              <input
-                type="text"
-                placeholder="Postal Code"
-                className="p-2 my-2 w-100"
-              />
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              <input
-                type="text"
-                placeholder="Phone number"
-                className="p-2 my-2 w-100"
-              />
-            </div>
-          </div>
-          <div className="p-2 mt-2 border rounded-0 radioBtns">
-            <input
-              type="radio"
-              id="cashOnDelivery"
-              name="payment"
-              value="Cash-On-Delivery"
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            />
-            <label htmlFor="cashOnDelivery" className="ps-2">
-              Cash On Delivery
-            </label>
-          </div>
-          <div className="p-2 border border-top-0 rounded-0 radioBtns">
-            <input
-              type="radio"
-              id="viaStripe"
-              name="payment"
-              value="stripe"
-              onChange={(e) => setPaymentMethod(e.target.value)}
-            />
-            <label htmlFor="viaStripe" className="ps-2">
-              Stripe (Credit/Debit Card)
-            </label>
-          </div> */}
-          <button
-            className=" mt-3 p-2 w-100 CheckBtn"
-            onClick={handleInitiateStripePayment}
-            // disabled={paymentMethod !== "stripe"}
-          >
-            Pay With Stripe
-          </button>
         </div>
         <div className="col-lg-6 mt-5">
           {cartItems?.items?.map((cartItem) => (
@@ -215,7 +120,7 @@ export default function Checkout() {
                 <div className="checkout-info align-items-center">
                   <div className="name ms-1">{cartItem?.title}</div>
                   <div className="price">
-                    ${" "}
+                    Rs.{" "}
                     {cartItem?.salePrice > 0
                       ? cartItem?.salePrice
                       : cartItem?.price}
@@ -242,8 +147,14 @@ export default function Checkout() {
           ))}
           <div className="d-flex justify-content-between px-3">
             <h6 style={{ color: "var(--primary-color)" }}>Total:</h6>
-            <h6>${totalCartAmount}</h6>
+            <h6>Rs. {totalCartAmount}</h6>
           </div>
+          <button
+            className=" mt-3 p-2 mb-3 w-100 CheckBtn"
+            onClick={handleInitiateStripePayment}
+          >
+            Pay With Stripe
+          </button>
         </div>
       </div>
     </div>

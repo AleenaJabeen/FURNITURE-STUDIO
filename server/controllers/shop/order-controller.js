@@ -243,7 +243,7 @@ const createOrder = async (req, res) => {
       payment_method_types: ["card"],
       line_items: cartItems.map((item) => ({
         price_data: {
-          currency: "USD",
+          currency: "pkr",
           product_data: {
             name: item.title,
             images: [item.image], 

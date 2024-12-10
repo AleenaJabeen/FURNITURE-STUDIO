@@ -11,9 +11,7 @@ import { ToastContainer } from "react-toastify";
 import {
   Login,
   Register,
-  Dashboard,
   Products,
-  Features,
   Orders,
   NotFound,
   Account,
@@ -84,9 +82,7 @@ function App() {
             </CheckAuth>
           }
         >
-          <Route path="dashboard" element={<Dashboard />} />
           <Route path="products" element={<Products />} />
-          <Route path="features" element={<Features />} />
           <Route path="orders" element={<Orders />} />
         </Route>
         <Route

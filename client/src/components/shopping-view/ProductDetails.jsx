@@ -89,7 +89,7 @@ export default function ProductDetails() {
           <div className="col-lg-5 product-info">
             <h1 className="mb-2 mt-3"></h1>
             <p className="mb-1 lh-1 pb-2">{productDetails?.title}</p>
-            <p className="m-0 lh-1 pb-2">Rs.{productDetails?.price}</p>
+            <p className="m-0 lh-1 pb-2">Rs. {productDetails?.price}</p>
             <p className="m-0 lh-1 text-white pb-2">
               Category:
               {productDetails?.category === "furniture"

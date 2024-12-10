@@ -118,7 +118,7 @@ export default function CartTable() {
                 </div>
               </td>
               <td className="price">
-                ${" "}
+                Rs.{" "}
                 {cartItem?.salePrice > 0
                   ? cartItem?.salePrice
                   : cartItem?.price}

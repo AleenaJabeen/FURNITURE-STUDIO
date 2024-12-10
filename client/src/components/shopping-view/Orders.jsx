@@ -68,7 +68,7 @@ function ShoppingOrders() {
                         {orderItem?.orderStatus}
                       </span>
                     </td>
-                    <td>${orderItem?.totalAmount}</td>
+                    <td>Rs. {orderItem?.totalAmount}</td>
                     <td>
                       <button
                         onClick={() => {

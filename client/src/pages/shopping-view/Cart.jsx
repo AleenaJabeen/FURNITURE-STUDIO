@@ -32,7 +32,7 @@ export default function Cart() {
         </div>
         <div className="subtotal col-12 text-end">
           <h2>
-            Subtotal: <span className="amount">$ {totalCartAmount}</span>
+            Subtotal: <span className="amount">Rs. {totalCartAmount}</span>
           </h2>
           <div>
             <button className="CheckBtn rounded-0 w-25 p-2" onClick={checkoutPage} disabled={cartItems?.items?.length === 0}>

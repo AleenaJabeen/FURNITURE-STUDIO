@@ -22,7 +22,7 @@ function ShoppingOrderDetailsView({closeModal, orderDetails }) {
     </div>
     <div className='d-flex justify-content-between align-items-center dialogContent'>
         <p>Order Price</p>
-        <label>${orderDetails?.totalAmount}</label>
+        <label>Rs. {orderDetails?.totalAmount}</label>
     </div>
     <div className='d-flex justify-content-between align-items-center dialogContent'>
         <p>Payment method</p>
@@ -56,7 +56,7 @@ function ShoppingOrderDetailsView({closeModal, orderDetails }) {
                 <li className='d-flex justify-content-between align-items-center'>
                     <span>Title: {item.title}</span>
                     <span>Quantity: {item.quantity}</span>
-                    <span>Price: ${item.price}</span>
+                    <span>Price: Rs. {item.price}</span>
                 </li>
                 ))
                 : null}

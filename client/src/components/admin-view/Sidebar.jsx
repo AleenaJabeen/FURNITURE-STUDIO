@@ -4,30 +4,6 @@ import styles from "../../css/AdminCSS/AdminLayout.module.css";
 
 const adminSidebarMenuItems = [
   {
-    id: "dashboard",
-    label: "Dashboard",
-    path: "/admin/dashboard",
-    icon: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="lucide lucide-layout-dashboard"
-      >
-        <rect width="7" height="9" x="3" y="3" rx="1" />
-        <rect width="7" height="5" x="14" y="3" rx="1" />
-        <rect width="7" height="9" x="14" y="12" rx="1" />
-        <rect width="7" height="5" x="3" y="16" rx="1" />
-      </svg>
-    ),
-  },
-  {
     id: "products",
     label: "Products",
     path: "/admin/products",
@@ -107,10 +83,10 @@ function Sidebar({ open, setOpen }) {
     <Fragment>
       <aside
         className={`d-lg-flex d-none flex-column p-3 ${styles.sidebar}`}
-        style={{ width: "18rem" , borderRight:"1px solid var(--primary-color)"}}
+        style={{ minWidth: "18rem" , borderRight:"1px solid var(--primary-color)"}}
       >
         <div
-          onClick={() => navigate("/admin/dashboard")}
+          onClick={() => navigate("/admin/products")}
           className={`d-flex align-items-center gap-2 ${styles.mainheading}`}
         >
           <svg
@@ -153,7 +129,7 @@ function Sidebar({ open, setOpen }) {
       >
         <div
           onClick={() => {
-            navigate("/admin/dashboard");
+            navigate("/admin/products");
             setOpen(false);
           }}
           className={`d-flex cursor-pointer justify-content-between align-items-center gap-2 ${styles.mainheading}`}

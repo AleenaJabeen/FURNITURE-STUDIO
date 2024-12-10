@@ -47,10 +47,10 @@ function ProjectTile({ products, handleAddtoCart }) {
               } fs-6 fw-semibold`}
               style={{color:"var(--primary-color)"}}
             >
-              ${products?.price}
+              Rs. {products?.price}
             </span>
             {products?.salePrice > 0 ? (
-              <span className="fs-6 fw-bold" style={{color:"var(--primary-color)"}}>${products?.salePrice}</span>
+              <span className="fs-6 fw-bold" style={{color:"var(--primary-color)"}}>Rs. {products?.salePrice}</span>
             ) : null}
           </div>
         </div>

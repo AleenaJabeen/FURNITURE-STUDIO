@@ -26,10 +26,10 @@ function AdminProductTile({
               } fs-6 fw-semibold`}
               style={{color:"var(--primary-color)"}}
             >
-              ${product?.price}
+              Rs. {product?.price}
             </span>
             {product?.salePrice > 0 ? (
-              <span className="fs-6 fw-bold" style={{color:"var(--primary-color)"}}>${product?.salePrice}</span>
+              <span className="fs-6 fw-bold" style={{color:"var(--primary-color)"}}>Rs. {product?.salePrice}</span>
             ) : null}
           </div>
         

@@ -1,59 +1,159 @@
-/* navbar styling */
 
 .navbar {
-    background: var(--tm-secondary-bg);
-    font-family: "Lato", "Helvetica Neue", sans-serif;
-  }
-  .navbar-brand img {
-    width: 100px;
-    height: 80px;
-    object-fit: cover;
-  }
-  .nav-link{
-    color: var(--text-color);
-    text-transform: uppercase;
+  background: var(--tm-secondary-bg);
+  font-family: "Lato", "Helvetica Neue", sans-serif;
+}
+
+.navbar-brand {
+  color: var(--text-color);
+  font-size: 1.15rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+.navbar-brand:hover {
+  color: var(--text-skincolor-bg);
+}
+.navbar-collapse {
+  display: flex;
+  justify-content: center; /* Center all items */
+  align-items: center; /* Vertically center items */
+}
+
+.navbar-brand img {
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+}
+
+
+.navbar-toggler span {
+  font-size: 1.5rem;
+  z-index: 1100;
+  position: relative;
+}
+.navbar-toggler span.Close{
+  margin-top: -1rem;
+  position: fixed;
+}
+
+
+/* Header-Right Flex Row */
+.header-right {
+  display: flex;
+  flex-direction: row; /* Ensure horizontal layout */
+}
+
+/* NavLink Styling */
+.nav-link {
+  color: var(--text-color);
+  text-transform: uppercase;
+}
+
+.nav-link.active,.nav-link:hover{
+  color: var(--text-skincolor-bg) !important;
+}
+.cartLink.active,.cartLink:hover{
+  color: var(--text-color) !important;
+}
+.nav-link.activate{
+  color: var(--text-color);
+}
+ul.navbar-nav{
+  display: flex;
+}
+.navbar-nav li a {
+  color: var(--text-color);
+}
+.navbar-nav li a:hover {
+  color: var(--text-skincolor-bg);
+  border-top: 2px solid var(--text-skincolor-bg);
+  animation: borderSlide 1s linear;
+}
+.navbar-nav li.cart-icon a:hover{
+  border-top: none;
+  animation: none;
+  color: var(--text-color);
+}
+
+.loginIcon{
+  font-size: 2rem;
+}
+
+/* Laptop View */
+@media (min-width: 992px) {
+  .navbar {
+    justify-content: space-between;
+    padding: 0 1rem;
   }
 
-  .nav-link.active,.nav-link:hover{
-    color: var(--text-skincolor-bg) !important;
-  }
-  .cartLink.active,.cartLink:hover{
-    color: var(--text-color) !important;
-  }
-  .nav-link.activate{
-    color: var(--text-color);
-  }
   .navbar-brand {
-    color: var(--text-skincolor-bg);
-    font-size: 1.15rem;
-    font-weight: 600;
+    margin-right: auto;
+  }
+
+  .header-right {
+    margin-left: auto;
+  }
+
+  .navbar-nav {
+    margin: 0 auto; /* Center menu items */
+  }
+}
+
+/* Mobile and Tablet View (Toggler Menu) */
+@media (max-width: 992px) {
+  .navbarContainer {
+    flex-wrap: nowrap !important;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
-  .navbar-brand:hover {
-    color: var(--text-color);
-  }
-  .navbar-toggler-icon {
-    font-size: 1.5rem;
-  }
-  
-  .navbar-nav li a {
-    color: var(--text-color);
 
+  .navbar-brand {
+    margin: 0;
+    order: 1; /* Center the brand */
   }
-  .navbar-nav li a:hover {
-    color: var(--text-skincolor-bg);
-    border-top: 2px solid var(--text-skincolor-bg);
-    animation: borderSlide 1s linear;
+
+  .navbar-toggler {
+    order: 0; /* Push toggler to the left */
   }
-  .navbar-nav li.cart-icon a:hover{
-    border-top: none;
-    animation: none;
-    color: var(--text-color);
+
+  .navbar-toggler span {
+    font-size: 1.5rem;
+    margin: 0; /* Reset padding */
   }
-  .loginIcon{
-    font-size: 2rem;
+
+  .header-right {
+    order: 2; /* Push header-right to the right */
   }
+
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 18rem;
+    height: 100vh;
+    background: var(--tm-secondary-bg);
+    z-index: 1050;
+    padding: 2rem 1rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .navbar-collapse.show {
+    transform: translateX(0); /* Slide in */
+  }
+
+  .navbar-collapse ul {
+    flex-direction: column; /* Vertical layout for menu items */
+    /* align-items: flex-start; */
+  }
+
+  .navbar-nav {
+    margin: 0;
+  }
+}
+
   .UserValue{
     width: 40px;
     height: 40px;
@@ -379,4 +479,3 @@
           margin-bottom: 1rem;
         }
   }
- 
