@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 export default function Cart() {
     const { cartItems } = useSelector((state) => state.shopCart);
     const totalCartAmount =
-    cartItems && cartItems.items.length > 0
+    cartItems && cartItems.items && cartItems.items.length > 0
       ? cartItems?.items?.reduce(
           (sum, currentItem) =>
             sum +
@@ -28,7 +28,9 @@ export default function Cart() {
       <h1 className="text-center">Shopping Cart</h1>
       <div className="row">
         <div className="col-12">
-        {cartItems?.items?.length > 0 ? <CartTable /> : <h4>Your cart is empty.</h4>}
+          {/* console.log(cartItems?.items?.length ); */}
+          
+        {cartItems && cartItems.items  ? <CartTable /> : <h4>Your cart is empty.</h4>}
         </div>
         <div className="subtotal col-12 text-end">
           <h2>
