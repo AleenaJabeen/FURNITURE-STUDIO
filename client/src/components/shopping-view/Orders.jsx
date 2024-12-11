@@ -11,7 +11,9 @@ import {
 function ShoppingOrders() {
   const [showModal, setShowModal] = useState(false);
 
-  const closeModal = () => setShowModal(false);
+  const closeModal = () => {setShowModal(false);
+    dispatch(resetOrderDetails());
+  };
 
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
