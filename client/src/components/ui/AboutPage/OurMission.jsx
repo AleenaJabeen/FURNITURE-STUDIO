@@ -10,11 +10,12 @@ const OurMission = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '100%',
-                height: '80vh',
+                height: window.innerWidth < 768?"100vh":"90vh",
                 position: 'relative',
+
             }}
         >
-            <div className='mission col-lg-6 col-9 p-4' style={{background:"#000000"}}>
+            <div className='mission col-lg-6 col-9' style={{background:"#000000",padding:innerWidth<768?"1rem":"4rem"}}>
                 <h2 className="display-4 py-4" style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)',color:"#caa571"
                  }}>
                     Our Mission
