@@ -10,7 +10,7 @@ const {
 const router = express.Router();
 
 router.post("/create", createOrder);
-router.post("/capture", capturePayment);
+router.put("/capture", capturePayment);
 router.get("/list/:userId", getAllOrdersByUser);
 router.get("/details/:id", getOrderDetails);
 

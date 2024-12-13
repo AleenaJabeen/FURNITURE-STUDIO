@@ -11,7 +11,7 @@ function CheckAuth({ isAuthenticated, user, children }) {
       return <Navigate to="/auth/login" />;
     } else {
       if (user?.role === "admin") {
-        return <Navigate to="/admin/dashboard" />;
+        return <Navigate to="/admin/products" />;
       } else {
         return <Navigate to="/shop/home" />;
       }

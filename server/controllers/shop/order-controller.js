@@ -101,9 +101,9 @@ const capturePayment = async (req, res) => {
     }
 
     // Update the order status
-    order.paymentStatus = "paid";
-    order.orderStatus = "confirmed";
-    order.paymentId = sessionId;
+    paymentStatus = "paid";
+    orderStatus = "confirmed";
+    paymentId = sessionId;
     // order.payerId = payerId;
 
     // Reduce stock for each item
@@ -124,8 +124,8 @@ const capturePayment = async (req, res) => {
     // Delete the associated cart
     const getCartId = order.cartId;
     await Cart.findByIdAndDelete(getCartId);
-
-    await order.save();
+    await Order.findByIdAndUpdate(orderId, {paymentStatus, paymentId,orderStatus});
+    //await order.save();
 
     res.status(200).json({
       success: true,
